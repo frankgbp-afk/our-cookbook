@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f7f3ea" />
+  <title>Our Cookbook</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div>
+      <p class="eyebrow">Family recipes</p>
+      <h1>Our Cookbook</h1>
+      <p class="subtitle">The recipes we actually make.</p>
+    </div>
+  </header>
+
+  <main>
+    <section id="homeView">
+      <div class="controls">
+        <label class="search-box">
+          <span class="sr-only">Search recipes</span>
+          <input id="searchInput" type="search" placeholder="Search recipes or ingredients…" autocomplete="off" />
+        </label>
+        <div id="categoryButtons" class="category-row" aria-label="Recipe categories"></div>
+      </div>
+
+      <div class="section-heading">
+        <h2 id="resultsTitle">All Recipes</h2>
+        <span id="recipeCount"></span>
+      </div>
+
+      <div id="recipeGrid" class="recipe-grid"></div>
+      <p id="emptyState" class="empty-state" hidden>No recipes found. Try another search or category.</p>
+    </section>
+
+    <section id="recipeView" class="recipe-view" hidden>
+      <button id="backButton" class="back-button" type="button">← Back to recipes</button>
+      <article id="recipeDetail"></article>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made with recipes worth keeping.</p>
+  </footer>
+
+  <script src="recipes.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
