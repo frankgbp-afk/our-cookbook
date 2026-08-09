@@ -14,6 +14,13 @@ const CATEGORY_COLORS = {
   Snacks: "#77935e"
 };
 
+const AUTHOR_COLORS = {
+  Frank: "#4C7A4D",
+  Beth: "#7FB7D6",
+  Ann: "#8E6BBE",
+  Kate: "#E0B43D"
+};
+
 const homeView = document.getElementById("homeView");
 const recipeView = document.getElementById("recipeView");
 const cookingView = document.getElementById("cookingView");
@@ -38,13 +45,27 @@ function escapeHTML(value = "") {
     .replaceAll("'", "&#039;");
 }
 
+function authorColor(author) {
+  return AUTHOR_COLORS[author] || "#8f7867";
+}
+
+function authorBadgeMarkup(recipe) {
+  if (!recipe.author) return "";
+  return `
+    <span class="author-badge" style="--author:${authorColor(recipe.author)}">
+      <span class="author-icon" aria-hidden="true">♨</span>
+      <span>${escapeHTML(recipe.author)}</span>
+    </span>
+  `;
+}
+
 function categoryColor(category) {
   return CATEGORY_COLORS[category] || "#8f7867";
 }
 
 function setupCategories() {
   const existing = new Set(recipes.map(r => r.category).filter(Boolean));
-  const categories = CATEGORY_ORDER.filter(c => c === "All" || existing.has(c) || ["Mains","Sides","Soups","Desserts","Drinks"].includes(c));
+  const categories = CATEGORY_ORDER.filter(c => c === "All" || existing.has(c) || ["Mains","Sides","Soups","Desserts","Drinks","Snacks"].includes(c));
 
   categoryButtons.innerHTML = categories.map(category => `
     <button
@@ -99,6 +120,7 @@ function renderRecipes() {
         ${recipe.image ? `<img class="recipe-card-photo" src="${escapeHTML(recipe.image)}" alt="${escapeHTML(recipe.name)}" loading="lazy" />` : ""}
       </div>
       <div class="recipe-card-content">
+        ${authorBadgeMarkup(recipe)}
         <p class="recipe-category">${escapeHTML(recipe.category)}</p>
         <h3>${escapeHTML(recipe.name)}</h3>
         <p class="recipe-description">${escapeHTML(recipe.description || "")}</p>
@@ -261,6 +283,7 @@ function recipeMarkup(recipe) {
     <div class="detail-hero" style="--cat:${categoryColor(recipe.category)}">
       ${recipe.image ? `<img class="detail-photo" src="${escapeHTML(recipe.image)}" alt="${escapeHTML(recipe.name)}" />` : ""}
       <div class="detail-top">
+        ${authorBadgeMarkup(recipe)}
         <p class="recipe-category">${escapeHTML(recipe.category)}</p>
         <h2>${escapeHTML(recipe.name)}</h2>
         <p class="detail-description">${escapeHTML(recipe.description || "")}</p>
