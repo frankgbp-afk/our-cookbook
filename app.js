@@ -125,6 +125,137 @@ function renderRecipes() {
   });
 }
 
+
+function parseMixedNumber(text) {
+  const value = String(text).trim();
+  if (/^\d+\s+\d+\/\d+$/.test(value)) {
+    const [whole, fraction] = value.split(/\s+/);
+    const [n, d] = fraction.split("/").map(Number);
+    return Number(whole) + n / d;
+  }
+  if (/^\d+\/\d+$/.test(value)) {
+    const [n, d] = value.split("/").map(Number);
+    return n / d;
+  }
+  if (/^\d+(\.\d+)?$/.test(value)) return Number(value);
+  return null;
+}
+
+function prettyQuantity(value) {
+  const rounded = Math.round(value * 16) / 16;
+  const whole = Math.floor(rounded + 1e-9);
+  const fraction = rounded - whole;
+  const common = [
+    [0, ""], [1/16, "1/16"], [1/8, "1/8"], [3/16, "3/16"],
+    [1/4, "1/4"], [5/16, "5/16"], [3/8, "3/8"], [7/16, "7/16"],
+    [1/2, "1/2"], [9/16, "9/16"], [5/8, "5/8"], [11/16, "11/16"],
+    [3/4, "3/4"], [13/16, "13/16"], [7/8, "7/8"], [15/16, "15/16"]
+  ];
+  let best = common[0];
+  for (const pair of common) {
+    if (Math.abs(fraction - pair[0]) < Math.abs(fraction - best[0])) best = pair;
+  }
+  if (best[0] === 0) return String(whole);
+  if (whole === 0) return best[1];
+  return `${whole} ${best[1]}`;
+}
+
+function scaleIngredient(ingredient, factor) {
+  if (!factor || factor === 1) return ingredient;
+
+  const match = ingredient.match(/^(\d+\s+\d+\/\d+|\d+\/\d+|\d+(?:\.\d+)?)(.*)$/);
+  if (!match) return ingredient;
+
+  const amount = parseMixedNumber(match[1]);
+  if (amount === null) return ingredient;
+
+  return `${prettyQuantity(amount * factor)}${match[2]}`;
+}
+
+function servingInfo(recipe) {
+  const numeric = Number(recipe.servings);
+  if (Number.isFinite(numeric) && numeric > 0) {
+    return { mode: "servings", base: numeric, current: numeric, factor: 1 };
+  }
+  return { mode: "batch", base: 1, current: 1, factor: 1 };
+}
+
+function renderIngredientList(recipe, factor = 1) {
+  return (recipe.ingredients || [])
+    .map(item => `<li>${escapeHTML(scaleIngredient(item, factor))}</li>`)
+    .join("");
+}
+
+function servingControlMarkup(recipe) {
+  const info = servingInfo(recipe);
+  if (info.mode === "servings") {
+    return `
+      <div class="serving-adjuster" data-serving-mode="servings" data-base="${info.base}">
+        <span class="serving-label">Servings</span>
+        <div class="serving-stepper">
+          <button class="serving-button" data-serving-action="down" type="button" aria-label="Decrease servings">−</button>
+          <strong class="serving-value">${info.current}</strong>
+          <button class="serving-button" data-serving-action="up" type="button" aria-label="Increase servings">+</button>
+        </div>
+      </div>
+    `;
+  }
+
+  return `
+    <div class="serving-adjuster" data-serving-mode="batch" data-base="1">
+      <span class="serving-label">Batch size</span>
+      <div class="serving-stepper">
+        <button class="serving-button" data-serving-action="down" type="button" aria-label="Decrease batch size">−</button>
+        <strong class="serving-value">1×</strong>
+        <button class="serving-button" data-serving-action="up" type="button" aria-label="Increase batch size">+</button>
+      </div>
+    </div>
+  `;
+}
+
+function attachServingControls(recipe) {
+  const adjuster = recipeDetail.querySelector(".serving-adjuster");
+  const ingredientList = recipeDetail.querySelector(".ingredients");
+  if (!adjuster || !ingredientList) return;
+
+  const mode = adjuster.dataset.servingMode;
+  const base = Number(adjuster.dataset.base) || 1;
+  let current = base;
+
+  const valueEl = adjuster.querySelector(".serving-value");
+  const down = adjuster.querySelector('[data-serving-action="down"]');
+  const up = adjuster.querySelector('[data-serving-action="up"]');
+
+  function update() {
+    let factor;
+    if (mode === "servings") {
+      current = Math.max(1, Math.round(current));
+      factor = current / base;
+      valueEl.textContent = String(current);
+      down.disabled = current <= 1;
+    } else {
+      current = Math.max(0.5, Math.round(current * 2) / 2);
+      factor = current;
+      valueEl.textContent = `${current}×`;
+      down.disabled = current <= 0.5;
+    }
+    ingredientList.innerHTML = renderIngredientList(recipe, factor);
+  }
+
+  down.addEventListener("click", () => {
+    current -= mode === "servings" ? 1 : 0.5;
+    update();
+  });
+
+  up.addEventListener("click", () => {
+    current += mode === "servings" ? 1 : 0.5;
+    update();
+  });
+
+  update();
+}
+
+
 function recipeMarkup(recipe) {
   return `
     <div class="detail-hero" style="--cat:${categoryColor(recipe.category)}">
@@ -148,8 +279,9 @@ function recipeMarkup(recipe) {
         <div class="recipe-columns">
           <section>
             <h3>Ingredients</h3>
+            ${servingControlMarkup(recipe)}
             <ul class="ingredients">
-              ${(recipe.ingredients || []).map(item => `<li>${escapeHTML(item)}</li>`).join("")}
+              ${renderIngredientList(recipe, 1)}
             </ul>
           </section>
 
@@ -173,6 +305,7 @@ function openRecipe(id, updateHistory = true) {
 
   activeRecipeId = id;
   recipeDetail.innerHTML = recipeMarkup(recipe);
+  attachServingControls(recipe);
 
   const startButton = recipeDetail.querySelector("[data-start-cooking]");
   if (startButton) {
