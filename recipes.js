@@ -170,6 +170,37 @@ const recipes = [
       "Continue shaking occasionally until the popping slows to a stop. Remove the pot from the heat and carefully open the lid away from your face."
     ],
     notes: "Keep the lid on while the popcorn is popping, and remove the pot from the heat once the popping has mostly stopped."
+  },
+  {
+    id: "smarter-alfredo",
+    name: "Smarter Alfredo",
+    category: "Mains",
+    author: "Beth",
+    description: "A lighter, creamy Alfredo-style fettuccine made with chicken broth, cream cheese, Parmesan, and garlic.",
+    image: "smarter-alfredo.jpg",
+    prepTime: "5 min",
+    cookTime: "15 min",
+    totalTime: "20 min",
+    servings: "4",
+    tags: ["alfredo", "pasta", "fettuccine", "easy"],
+    ingredients: [
+      "3 3/4 cups low-sodium chicken broth",
+      "1/4 cup flour",
+      "1 cup cream cheese",
+      "9 tablespoons grated Parmesan cheese",
+      "1-3 cloves garlic",
+      "Salt and pepper to taste",
+      "8 ounces fettuccine"
+    ],
+    instructions: [
+      "Cook the fettuccine according to the package directions.",
+      "Meanwhile, whisk the chicken broth and flour together in a medium saucepan until smooth.",
+      "Stir in the cream cheese, garlic, 8 tablespoons of the Parmesan cheese, and salt and pepper to taste.",
+      "Cook over medium heat, stirring constantly with a whisk, until the sauce comes to a gentle boil and thickens, about 2 minutes.",
+      "Drain the pasta and toss it with the Alfredo sauce.",
+      "Sprinkle with the remaining 1 tablespoon Parmesan cheese and serve."
+    ],
+    notes: "Use 1 to 3 cloves of garlic depending on how garlicky you like your Alfredo."
   }
 
 ];
