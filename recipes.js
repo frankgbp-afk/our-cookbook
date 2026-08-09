@@ -145,5 +145,27 @@ const recipes = [
       "Finish with a sprinkle of flaky sea salt before serving."
     ],
     notes: "Avoid overmixing once the flour is added. The cookies will continue to set while resting on the hot cookie sheet."
+  },
+  {
+    id: "stovetop-popcorn",
+    title: "Stovetop Popcorn",
+    category: "Snacks",
+    author: "Frank",
+    description: "Classic homemade stovetop popcorn — hot, salty, and ready in minutes.",
+    time: "10 min",
+    servings: 4,
+    image: "stovetop-popcorn.webp",
+    ingredients: [
+      { amount: 3, unit: "tablespoons", item: "oil" },
+      { amount: 0.5, unit: "cup", item: "popcorn kernels" },
+      { amount: 0.5, unit: "teaspoon", item: "popcorn salt" }
+    ],
+    instructions: [
+      "Set a burner to medium-high heat. Add the oil to a large pot and let it warm up.",
+      "Add the popcorn kernels and popcorn salt, then cover the pot with a lid.",
+      "Once the kernels begin popping, carefully shake the covered pot back and forth over the burner.",
+      "Continue shaking occasionally until the popping slows to a stop. Remove the pot from the heat and carefully open the lid away from your face."
+    ]
   }
+
 ];
