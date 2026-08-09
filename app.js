@@ -1,5 +1,17 @@
 let selectedCategory = "All";
 
+const CATEGORY_ORDER = ["All", "Mains", "Sides", "Soups", "Desserts", "Drinks", "Breakfast", "Snacks"];
+const CATEGORY_COLORS = {
+  All: "#c95616",
+  Mains: "#d97722",
+  Sides: "#d96b2b",
+  Soups: "#4f82a6",
+  Desserts: "#9a62a0",
+  Drinks: "#d99a2f",
+  Breakfast: "#bd7b35",
+  Snacks: "#77935e"
+};
+
 const homeView = document.getElementById("homeView");
 const recipeView = document.getElementById("recipeView");
 const recipeGrid = document.getElementById("recipeGrid");
@@ -20,17 +32,20 @@ function escapeHTML(value = "") {
     .replaceAll("'", "&#039;");
 }
 
-function imageFor(recipe) {
-  if (recipe.image) return escapeHTML(recipe.image);
-  const label = encodeURIComponent(recipe.name);
-  return `https://placehold.co/1200x675/f0e4d3/5b4937?text=${label}`;
+function categoryColor(category) {
+  return CATEGORY_COLORS[category] || "#8f7867";
 }
 
 function setupCategories() {
-  const categories = ["All", ...new Set(recipes.map(r => r.category).filter(Boolean))];
+  const existing = new Set(recipes.map(r => r.category).filter(Boolean));
+  const categories = CATEGORY_ORDER.filter(c => c === "All" || existing.has(c) || ["Mains","Sides","Soups","Desserts","Drinks"].includes(c));
+
   categoryButtons.innerHTML = categories.map(category => `
-    <button class="category-button ${category === selectedCategory ? "active" : ""}"
-      data-category="${escapeHTML(category)}" type="button">${escapeHTML(category)}</button>
+    <button
+      class="category-button ${category === selectedCategory ? "active" : ""}"
+      data-category="${escapeHTML(category)}"
+      style="--cat:${categoryColor(category)}"
+      type="button">${escapeHTML(category)}</button>
   `).join("");
 
   categoryButtons.querySelectorAll(".category-button").forEach(button => {
@@ -67,16 +82,24 @@ function renderRecipes() {
   emptyState.hidden = list.length !== 0;
 
   recipeGrid.innerHTML = list.map(recipe => `
-    <article class="recipe-card" data-id="${escapeHTML(recipe.id)}" tabindex="0" role="button"
+    <article
+      class="recipe-card"
+      data-id="${escapeHTML(recipe.id)}"
+      style="--cat:${categoryColor(recipe.category)}"
+      tabindex="0"
+      role="button"
       aria-label="Open ${escapeHTML(recipe.name)}">
-      <img class="recipe-image" src="${imageFor(recipe)}" alt="${escapeHTML(recipe.name)}" />
-      <div class="recipe-card-body">
+      <div class="recipe-card-accent">
         <p class="recipe-category">${escapeHTML(recipe.category)}</p>
         <h3>${escapeHTML(recipe.name)}</h3>
+        <p class="recipe-description">${escapeHTML(recipe.description || "")}</p>
+      </div>
+      <div class="recipe-card-footer">
         <div class="recipe-meta">
-          <span>⏱ ${escapeHTML(recipe.totalTime)}</span>
+          <span>◷ ${escapeHTML(recipe.totalTime)}</span>
           <span>🍽 ${escapeHTML(recipe.servings)} servings</span>
         </div>
+        <span class="view-recipe">View Recipe →</span>
       </div>
     </article>
   `).join("");
@@ -93,18 +116,15 @@ function renderRecipes() {
   });
 }
 
-function openRecipe(id) {
-  const recipe = recipes.find(r => r.id === id);
-  if (!recipe) return;
-
-  recipeDetail.innerHTML = `
-    <div class="detail-hero">
-      <img class="detail-image" src="${imageFor(recipe)}" alt="${escapeHTML(recipe.name)}" />
-      <div class="detail-content">
+function recipeMarkup(recipe) {
+  return `
+    <div class="detail-hero" style="--cat:${categoryColor(recipe.category)}">
+      <div class="detail-top">
         <p class="recipe-category">${escapeHTML(recipe.category)}</p>
         <h2>${escapeHTML(recipe.name)}</h2>
-        <p class="detail-description">${escapeHTML(recipe.description)}</p>
-
+        <p class="detail-description">${escapeHTML(recipe.description || "")}</p>
+      </div>
+      <div class="detail-content">
         <div class="meta-grid">
           <div class="meta-box"><span>Prep</span><strong>${escapeHTML(recipe.prepTime)}</strong></div>
           <div class="meta-box"><span>Cook</span><strong>${escapeHTML(recipe.cookTime)}</strong></div>
@@ -132,12 +152,18 @@ function openRecipe(id) {
       </div>
     </div>
   `;
+}
 
+function openRecipe(id, updateHistory = true) {
+  const recipe = recipes.find(r => r.id === id);
+  if (!recipe) return;
+
+  recipeDetail.innerHTML = recipeMarkup(recipe);
   homeView.hidden = true;
   recipeView.hidden = false;
   window.scrollTo({ top: 0, behavior: "smooth" });
 
-  history.pushState({ recipeId: id }, "", `#${id}`);
+  if (updateHistory) history.pushState({ recipeId: id }, "", `#${id}`);
 }
 
 function showHome(updateHistory = true) {
@@ -153,24 +179,17 @@ searchInput.addEventListener("input", renderRecipes);
 window.addEventListener("popstate", () => {
   const id = location.hash.slice(1);
   if (id && recipes.some(r => r.id === id)) {
-    openRecipeWithoutHistory(id);
+    openRecipe(id, false);
   } else {
     recipeView.hidden = true;
     homeView.hidden = false;
   }
 });
 
-function openRecipeWithoutHistory(id) {
-  const originalPushState = history.pushState;
-  history.pushState = () => {};
-  openRecipe(id);
-  history.pushState = originalPushState;
-}
-
 setupCategories();
 renderRecipes();
 
 const initialId = location.hash.slice(1);
 if (initialId && recipes.some(r => r.id === initialId)) {
-  openRecipeWithoutHistory(initialId);
+  openRecipe(initialId, false);
 }

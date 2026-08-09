@@ -3,16 +3,19 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#f7f3ea" />
+  <meta name="theme-color" content="#c95616" />
   <title>Our Cookbook</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div>
-      <p class="eyebrow">Family recipes</p>
+  <header class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="book-icon">▣</span> Family Recipes</p>
       <h1>Our Cookbook</h1>
       <p class="subtitle">The recipes we actually make.</p>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <img src="assets/wisconsin-board.png" alt="" />
     </div>
   </header>
 
@@ -20,6 +23,7 @@
     <section id="homeView">
       <div class="controls">
         <label class="search-box">
+          <span class="search-icon">⌕</span>
           <span class="sr-only">Search recipes</span>
           <input id="searchInput" type="search" placeholder="Search recipes or ingredients…" autocomplete="off" />
         </label>
@@ -42,7 +46,8 @@
   </main>
 
   <footer>
-    <p>Made with recipes worth keeping.</p>
+    <div class="footer-rule"><span>🍴</span></div>
+    <p>Made with recipes worth keeping. <span aria-hidden="true">♥</span></p>
   </footer>
 
   <script src="recipes.js"></script>
