@@ -1062,3 +1062,90 @@ footer {
   flex-basis: 27px;
   font-size: .82rem;
 }
+
+
+/* ===== Compact category navigation + card badge placement ===== */
+
+/* Keep all seven category buttons visible without horizontal overflow. */
+.category-row {
+  display: grid !important;
+  grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+  gap: 9px !important;
+  overflow: visible !important;
+  padding: 16px 0 4px !important;
+}
+
+.category-button {
+  min-width: 0 !important;
+  width: 100% !important;
+  min-height: 50px !important;
+  padding: 8px 5px !important;
+  border-radius: 15px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 5px !important;
+  font-size: .78rem !important;
+  line-height: 1.05 !important;
+  white-space: nowrap !important;
+}
+
+/* Row 1: All, Mains, Sides, Soups. Row 2: Desserts, Drinks, Snacks. */
+.category-button:nth-child(-n+4) { grid-column: span 3; }
+.category-button:nth-child(n+5) { grid-column: span 4; }
+
+.category-button::before {
+  font-size: .92rem;
+  line-height: 1;
+}
+.category-button[data-category="All"]::before { content: "▦"; }
+.category-button[data-category="Mains"]::before { content: "🍴"; }
+.category-button[data-category="Sides"]::before { content: "♨"; }
+.category-button[data-category="Soups"]::before { content: "♨"; }
+.category-button[data-category="Desserts"]::before { content: "🧁"; }
+.category-button[data-category="Drinks"]::before { content: "◫"; }
+.category-button[data-category="Snacks"]::before { content: "▤"; }
+
+/* Author badge lives in the upper-right corner of each recipe card. */
+.recipe-card-content {
+  position: relative !important;
+  padding-top: 15px !important;
+}
+
+.recipe-card .author-badge {
+  position: absolute !important;
+  top: 13px !important;
+  right: 13px !important;
+  z-index: 2;
+  margin: 0 !important;
+  max-width: 42% !important;
+}
+
+.recipe-card .recipe-category {
+  margin-top: 0 !important;
+  margin-right: 84px !important;
+}
+
+.recipe-card h3 {
+  padding-right: 0 !important;
+}
+
+/* Slightly calmer spacing between the controls and Featured Recipes. */
+.section-heading {
+  margin-top: 30px !important;
+}
+
+@media (max-width: 350px) {
+  .category-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  .category-button:nth-child(n) {
+    grid-column: span 1 !important;
+  }
+  .category-button:last-child {
+    grid-column: 1 / -1 !important;
+  }
+  .category-button {
+    font-size: .8rem !important;
+  }
+}
