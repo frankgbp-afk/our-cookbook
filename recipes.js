@@ -148,7 +148,7 @@ const recipes = [
   },
   {
     id: "stovetop-popcorn",
-    title: "Stovetop Popcorn",
+    name: "Stovetop Popcorn",
     category: "Snacks",
     author: "Frank",
     description: "Classic homemade stovetop popcorn — hot, salty, and ready in minutes.",
