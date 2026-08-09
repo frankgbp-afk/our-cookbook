@@ -7,6 +7,8 @@ const recipes = [
     name: "Garlic & Herb Rice",
     category: "Sides",
     description: "A flavorful, buttery rice with garlic and herbs. An easy side for almost any meal.",
+    image: "garlic-herb-rice.jpg",
+    author: "Frank",
     prepTime: "5 min",
     cookTime: "20 min",
     totalTime: "25 min",
@@ -37,6 +39,8 @@ const recipes = [
     name: "Cast Iron Chicken Breasts",
     category: "Mains",
     description: "Juicy seasoned chicken breasts seared in a hot cast iron skillet, then finished with butter in the oven.",
+    image: "cast-iron-chicken.jpg",
+    author: "Frank",
     prepTime: "5 min",
     cookTime: "16 min",
     totalTime: "26 min",
@@ -63,5 +67,83 @@ const recipes = [
       "Remove from the oven and let the chicken rest for 5 minutes before serving."
     ],
     notes: "The 11–12 minute oven time is a guideline. Chicken breast thickness varies, so use an instant-read thermometer and cook to 165°F."
+  },
+  {
+    id: "loaded-baked-potato-soup",
+    name: "Loaded Baked Potato Soup",
+    category: "Soups",
+    description: "A rich, creamy potato soup loaded with bacon, cheddar, sour cream, salsa verde, and fresh toppings.",
+    image: "loaded-potato-soup.jpg",
+    author: "Frank",
+    prepTime: "15 min",
+    cookTime: "30 min",
+    totalTime: "45 min",
+    servings: "Varies",
+    tags: ["soup", "potato", "bacon", "cheddar", "comfort food"],
+    ingredients: [
+      "6 slices thick-cut bacon, chopped",
+      "1 yellow onion, chopped",
+      "4 cloves garlic, chopped",
+      "Salt and black pepper, to taste",
+      "2 tablespoons salted butter",
+      "1/4 cup all-purpose flour (or gluten-free flour)",
+      "4 cups low-sodium vegetable broth",
+      "4 Russet potatoes, peeled and chopped",
+      "2 cups milk",
+      "1/3 cup salsa verde",
+      "1/3 cup plain Greek yogurt or sour cream",
+      "1 cup shredded cheddar cheese",
+      "1/2 cup fresh cilantro, chopped",
+      "Chopped green onion, for serving"
+    ],
+    instructions: [
+      "Cook the chopped bacon in a large pot until crisp. Remove the bacon and set it aside, leaving some bacon fat in the pot.",
+      "Add the onion and garlic to the same pot and sauté in the remaining bacon fat. Season lightly with salt and black pepper.",
+      "Add the butter, then stir in the flour. Cook briefly until the flour mixture is lightly browned and forms a roux.",
+      "Pour in the vegetable broth and add the chopped potatoes. Bring to a simmer and cook for about 15 minutes, or until the potatoes are tender.",
+      "Use a potato masher to mash some of the potatoes directly in the pot, leaving plenty of chunks for texture.",
+      "Stir in the milk, salsa verde, Greek yogurt or sour cream, and shredded cheddar. Cook gently until the cheese has melted and the soup is creamy.",
+      "Ladle into bowls and top with the reserved crispy bacon, additional yogurt or sour cream if desired, cilantro, and chopped green onion."
+    ],
+    notes: "The timing and serving size were not listed on the original recipe, so the 45-minute total is an estimate. Beer bread is suggested as an optional side for dipping."
+  }
+,
+  {
+    id: "brown-butter-chocolate-chip-cookies",
+    name: "Brown Butter Chocolate Chip Cookies",
+    category: "Desserts",
+    description: "Rich, chewy chocolate chip cookies made with nutty browned butter and finished with flaky sea salt.",
+    image: "brown-butter-chocolate-chip-cookies.jpg",
+    author: "Frank",
+    prepTime: "20 min",
+    cookTime: "11–12 min",
+    totalTime: "35 min",
+    servings: "Varies",
+    tags: ["cookies", "dessert", "chocolate chip", "brown butter", "baking"],
+    ingredients: [
+      "1 1/2 cups browned butter",
+      "2 cups brown sugar",
+      "1/2 cup white sugar",
+      "2 large egg yolks",
+      "2 whole eggs",
+      "2 tablespoons vanilla flavoring",
+      "3 1/2 cups all-purpose flour",
+      "1 1/2 teaspoons baking soda",
+      "2 teaspoons salt",
+      "4 cups chocolate chips",
+      "Flaky sea salt, for finishing"
+    ],
+    instructions: [
+      "Preheat the oven to 350°F.",
+      "Brown the butter, then let it cool slightly so it is still liquid but no longer piping hot.",
+      "Add the brown sugar and white sugar to the browned butter. Stir until just combined.",
+      "Add the egg yolks, whole eggs, and vanilla. Stir until just combined.",
+      "Add the flour, baking soda, and salt. Stir only partway, then add the chocolate chips and finish mixing until the dough just comes together.",
+      "Scoop the dough into balls and place them on a cookie sheet, leaving room for the cookies to spread.",
+      "Bake at 350°F for 11–12 minutes, keeping an eye on the cookies near the end.",
+      "Remove from the oven and let the cookies sit on the cookie sheet for 3 minutes.",
+      "Finish with a sprinkle of flaky sea salt before serving."
+    ],
+    notes: "Avoid overmixing once the flour is added. The cookies will continue to set while resting on the hot cookie sheet."
   }
 ];

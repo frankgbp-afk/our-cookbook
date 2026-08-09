@@ -1020,55 +1020,45 @@ footer {
 
 
 /* ===== Recipe author badges ===== */
-
 .author-badge {
   --author: #8f7867;
   display: inline-flex;
   align-items: center;
-  gap: 7px;
+  gap: 6px;
   width: fit-content;
-  margin: 0 0 9px;
-  padding: 4px 9px 4px 4px;
+  max-width: 100%;
+  margin: 0 0 7px;
+  padding: 3px 8px 3px 3px;
   border: 1px solid color-mix(in srgb, var(--author) 45%, white);
   border-radius: 999px;
   background: color-mix(in srgb, var(--author) 10%, white);
-  color: color-mix(in srgb, var(--author) 88%, #2f2118);
-  font-size: .78rem;
+  color: color-mix(in srgb, var(--author) 86%, #2f2118);
+  font-size: .72rem;
   font-weight: 850;
   line-height: 1;
 }
 
 .author-icon {
-  width: 25px;
-  height: 25px;
+  width: 22px;
+  height: 22px;
+  flex: 0 0 22px;
   display: grid;
   place-items: center;
   border-radius: 50%;
   background: var(--author);
   color: white;
-  font-size: .8rem;
-  line-height: 1;
+  font-size: .7rem;
 }
 
-/* keep badge compact on mobile cards */
-.recipe-card .author-badge {
-  margin-bottom: 7px;
-  font-size: .72rem;
-}
-
-.recipe-card .author-icon {
-  width: 22px;
-  height: 22px;
-  font-size: .72rem;
-}
-
-/* give detail-page badge a touch more presence */
 .detail-top .author-badge {
   margin-bottom: 10px;
+  padding-right: 10px;
   font-size: .82rem;
 }
 
 .detail-top .author-icon {
   width: 27px;
   height: 27px;
+  flex-basis: 27px;
+  font-size: .82rem;
 }

@@ -53,7 +53,7 @@ function authorBadgeMarkup(recipe) {
   if (!recipe.author) return "";
   return `
     <span class="author-badge" style="--author:${authorColor(recipe.author)}">
-      <span class="author-icon" aria-hidden="true">♨</span>
+      <span class="author-icon" aria-hidden="true">🍴</span>
       <span>${escapeHTML(recipe.author)}</span>
     </span>
   `;
