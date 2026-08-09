@@ -176,7 +176,7 @@ function openRecipe(id, updateHistory = true) {
   }
 
   homeView.hidden = true;
-  cookingView.hidden = true;
+  if (cookingView) cookingView.hidden = true;
   recipeView.hidden = false;
   hero.hidden = false;
   siteFooter.hidden = false;
@@ -187,7 +187,7 @@ function openRecipe(id, updateHistory = true) {
 }
 
 function showHome(updateHistory = true) {
-  cookingView.hidden = true;
+  if (cookingView) cookingView.hidden = true;
   recipeView.hidden = true;
   homeView.hidden = false;
   hero.hidden = false;
@@ -206,6 +206,7 @@ function startCooking(id) {
 
   homeView.hidden = true;
   recipeView.hidden = true;
+  if (!cookingView) return;
   cookingView.hidden = false;
   hero.hidden = true;
   siteFooter.hidden = true;
