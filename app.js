@@ -95,17 +95,20 @@ function renderRecipes() {
       tabindex="0"
       role="button"
       aria-label="Open ${escapeHTML(recipe.name)}">
-      <div class="recipe-card-accent">
+      <div class="recipe-card-media">
+        ${recipe.image ? `<img class="recipe-card-photo" src="${escapeHTML(recipe.image)}" alt="${escapeHTML(recipe.name)}" loading="lazy" />` : ""}
+      </div>
+      <div class="recipe-card-content">
         <p class="recipe-category">${escapeHTML(recipe.category)}</p>
         <h3>${escapeHTML(recipe.name)}</h3>
         <p class="recipe-description">${escapeHTML(recipe.description || "")}</p>
-      </div>
-      <div class="recipe-card-footer">
-        <div class="recipe-meta">
-          <span>◷ ${escapeHTML(recipe.totalTime)}</span>
-          <span>🍽 ${escapeHTML(recipe.servings)} servings</span>
+        <div class="recipe-card-bottom">
+          <div class="recipe-meta">
+            <span>◷ ${escapeHTML(recipe.totalTime)}</span>
+            <span>🍽 ${escapeHTML(recipe.servings)} servings</span>
+          </div>
+          <span class="view-recipe">View Recipe →</span>
         </div>
-        <span class="view-recipe">View Recipe →</span>
       </div>
     </article>
   `).join("");
@@ -125,6 +128,7 @@ function renderRecipes() {
 function recipeMarkup(recipe) {
   return `
     <div class="detail-hero" style="--cat:${categoryColor(recipe.category)}">
+      ${recipe.image ? `<img class="detail-photo" src="${escapeHTML(recipe.image)}" alt="${escapeHTML(recipe.name)}" />` : ""}
       <div class="detail-top">
         <p class="recipe-category">${escapeHTML(recipe.category)}</p>
         <h2>${escapeHTML(recipe.name)}</h2>
