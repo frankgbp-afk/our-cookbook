@@ -63,5 +63,42 @@ const recipes = [
       "Remove from the oven and let the chicken rest for 5 minutes before serving."
     ],
     notes: "The 11–12 minute oven time is a guideline. Chicken breast thickness varies, so use an instant-read thermometer and cook to 165°F."
+  },
+  {
+    id: "loaded-baked-potato-soup",
+    name: "Loaded Baked Potato Soup",
+    category: "Soups",
+    description: "A rich, creamy potato soup loaded with bacon, cheddar, sour cream, salsa verde, and fresh toppings.",
+    prepTime: "15 min",
+    cookTime: "30 min",
+    totalTime: "45 min",
+    servings: "Varies",
+    tags: ["soup", "potato", "bacon", "cheddar", "comfort food"],
+    ingredients: [
+      "6 slices thick-cut bacon, chopped",
+      "1 yellow onion, chopped",
+      "4 cloves garlic, chopped",
+      "Salt and black pepper, to taste",
+      "2 tablespoons salted butter",
+      "1/4 cup all-purpose flour (or gluten-free flour)",
+      "4 cups low-sodium vegetable broth",
+      "4 Russet potatoes, peeled and chopped",
+      "2 cups milk",
+      "1/3 cup salsa verde",
+      "1/3 cup plain Greek yogurt or sour cream",
+      "1 cup shredded cheddar cheese",
+      "1/2 cup fresh cilantro, chopped",
+      "Chopped green onion, for serving"
+    ],
+    instructions: [
+      "Cook the chopped bacon in a large pot until crisp. Remove the bacon and set it aside, leaving some bacon fat in the pot.",
+      "Add the onion and garlic to the same pot and sauté in the remaining bacon fat. Season lightly with salt and black pepper.",
+      "Add the butter, then stir in the flour. Cook briefly until the flour mixture is lightly browned and forms a roux.",
+      "Pour in the vegetable broth and add the chopped potatoes. Bring to a simmer and cook for about 15 minutes, or until the potatoes are tender.",
+      "Use a potato masher to mash some of the potatoes directly in the pot, leaving plenty of chunks for texture.",
+      "Stir in the milk, salsa verde, Greek yogurt or sour cream, and shredded cheddar. Cook gently until the cheese has melted and the soup is creamy.",
+      "Ladle into bowls and top with the reserved crispy bacon, additional yogurt or sour cream if desired, cilantro, and chopped green onion."
+    ],
+    notes: "The timing and serving size were not listed on the original recipe, so the 45-minute total is an estimate. Beer bread is suggested as an optional side for dipping."
   }
 ];
