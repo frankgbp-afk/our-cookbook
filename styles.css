@@ -1094,18 +1094,6 @@ footer {
 .category-button:nth-child(-n+4) { grid-column: span 3; }
 .category-button:nth-child(n+5) { grid-column: span 4; }
 
-.category-button::before {
-  font-size: .92rem;
-  line-height: 1;
-}
-.category-button[data-category="All"]::before { content: "▦"; }
-.category-button[data-category="Mains"]::before { content: "🍴"; }
-.category-button[data-category="Sides"]::before { content: "♨"; }
-.category-button[data-category="Soups"]::before { content: "♨"; }
-.category-button[data-category="Desserts"]::before { content: "🧁"; }
-.category-button[data-category="Drinks"]::before { content: "◫"; }
-.category-button[data-category="Snacks"]::before { content: "▤"; }
-
 /* Author badge lives in the upper-right corner of each recipe card. */
 .recipe-card-content {
   position: relative !important;
@@ -1148,4 +1136,63 @@ footer {
   .category-button {
     font-size: .8rem !important;
   }
+}
+
+
+/* ===== Clean monochrome category icons ===== */
+.category-button::before {
+  content: "" !important;
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  display: inline-block;
+  background-color: currentColor;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+/* All — 2x2 grid */
+.category-button[data-category="All"]::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='3' width='7' height='7' rx='1'/%3E%3Crect x='14' y='3' width='7' height='7' rx='1'/%3E%3Crect x='3' y='14' width='7' height='7' rx='1'/%3E%3Crect x='14' y='14' width='7' height='7' rx='1'/%3E%3C/g%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='3' width='7' height='7' rx='1'/%3E%3Crect x='14' y='3' width='7' height='7' rx='1'/%3E%3Crect x='3' y='14' width='7' height='7' rx='1'/%3E%3Crect x='14' y='14' width='7' height='7' rx='1'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Mains — fork and knife */
+.category-button[data-category="Mains"]::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 3v8M3.5 3v5a2.5 2.5 0 0 0 5 0V3M6 11v10M15 3v18M15 3c3 2 4 5 4 8h-4'/%3E%3C/g%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 3v8M3.5 3v5a2.5 2.5 0 0 0 5 0V3M6 11v10M15 3v18M15 3c3 2 4 5 4 8h-4'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Sides — plate */
+.category-button[data-category="Sides"]::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='8'/%3E%3Ccircle cx='12' cy='12' r='4'/%3E%3C/g%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='8'/%3E%3Ccircle cx='12' cy='12' r='4'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Soups — steaming bowl */
+.category-button[data-category="Soups"]::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 11h16c0 5-3 8-8 8s-8-3-8-8Z'/%3E%3Cpath d='M8 7c-1-1-1-2 0-3M12 7c-1-1-1-2 0-3M16 7c-1-1-1-2 0-3M7 21h10'/%3E%3C/g%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 11h16c0 5-3 8-8 8s-8-3-8-8Z'/%3E%3Cpath d='M8 7c-1-1-1-2 0-3M12 7c-1-1-1-2 0-3M16 7c-1-1-1-2 0-3M7 21h10'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Desserts — simple cupcake outline */
+.category-button[data-category="Desserts"]::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 10a5 5 0 0 1 10 0h1a2 2 0 0 1 0 4H6a2 2 0 0 1 0-4h1Z'/%3E%3Cpath d='M7 14l1 7h8l1-7M10 14v7M14 14v7'/%3E%3C/g%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 10a5 5 0 0 1 10 0h1a2 2 0 0 1 0 4H6a2 2 0 0 1 0-4h1Z'/%3E%3Cpath d='M7 14l1 7h8l1-7M10 14v7M14 14v7'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Drinks — drinking glass */
+.category-button[data-category="Drinks"]::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 3h12l-1.5 18h-9L6 3Z'/%3E%3Cpath d='M7 8h10M15 3l3-2'/%3E%3C/g%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 3h12l-1.5 18h-9L6 3Z'/%3E%3Cpath d='M7 8h10M15 3l3-2'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Snacks — pretzel */
+.category-button[data-category="Snacks"]::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 13c-2.5-3.5-5-5-7-4.5C2.5 9 2.5 12 4 13.5c1.5 1.5 4 1 8-2.5'/%3E%3Cpath d='M12 13c2.5-3.5 5-5 7-4.5 2.5.5 2.5 3.5 1 5-1.5 1.5-4 1-8-2.5'/%3E%3Cpath d='M6 17c1.5 2 3.5 3 6 3s4.5-1 6-3'/%3E%3Cpath d='M8 5c1-2 3-2 4 0 1-2 3-2 4 0'/%3E%3C/g%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 13c-2.5-3.5-5-5-7-4.5C2.5 9 2.5 12 4 13.5c1.5 1.5 4 1 8-2.5'/%3E%3Cpath d='M12 13c2.5-3.5 5-5 7-4.5 2.5.5 2.5 3.5 1 5-1.5 1.5-4 1-8-2.5'/%3E%3Cpath d='M6 17c1.5 2 3.5 3 6 3s4.5-1 6-3'/%3E%3Cpath d='M8 5c1-2 3-2 4 0 1-2 3-2 4 0'/%3E%3C/g%3E%3C/svg%3E");
 }
