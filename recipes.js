@@ -201,6 +201,31 @@ const recipes = [
       "Sprinkle with the remaining 1 tablespoon Parmesan cheese and serve."
     ],
     notes: "Use 1 to 3 cloves of garlic depending on how garlicky you like your Alfredo."
+  },
+  {
+    id: "beth-beer-dip",
+    name: "Beer Dip",
+    category: "Snacks",
+    author: "Beth",
+    description: "A creamy, cheesy ranch dip with a splash of beer, served chilled.",
+    image: "beth-beer-dip.jpg",
+    prepTime: "5 min",
+    cookTime: "0 min",
+    totalTime: "5 min + chill time",
+    servings: "8",
+    tags: ["dip", "snack", "beer", "ranch", "cheese"],
+    ingredients: [
+      "2 (8 oz) blocks cream cheese",
+      "2 cups shredded cheese",
+      "1 packet ranch seasoning mix",
+      "1/4 to 1/3 cup beer"
+    ],
+    instructions: [
+      "Add the cream cheese, shredded cheese, ranch seasoning mix, and 1/4 cup beer to a bowl.",
+      "Mix until everything is thoroughly combined.",
+      "Add a little more beer as needed, up to 1/3 cup, until the dip reaches the consistency you like.",
+      "Cover and chill before serving."
+    ]
   }
 
 ];
