@@ -104,4 +104,42 @@ const recipes = [
     ],
     notes: "The timing and serving size were not listed on the original recipe, so the 45-minute total is an estimate. Beer bread is suggested as an optional side for dipping."
   }
+,
+  {
+    id: "brown-butter-chocolate-chip-cookies",
+    name: "Brown Butter Chocolate Chip Cookies",
+    category: "Desserts",
+    description: "Rich, chewy chocolate chip cookies made with nutty browned butter and finished with flaky sea salt.",
+    image: "brown-butter-chocolate-chip-cookies.jpg",
+    prepTime: "20 min",
+    cookTime: "11–12 min",
+    totalTime: "35 min",
+    servings: "Varies",
+    tags: ["cookies", "dessert", "chocolate chip", "brown butter", "baking"],
+    ingredients: [
+      "1 1/2 cups browned butter",
+      "2 cups brown sugar",
+      "1/2 cup white sugar",
+      "2 large egg yolks",
+      "2 whole eggs",
+      "2 tablespoons vanilla flavoring",
+      "3 1/2 cups all-purpose flour",
+      "1 1/2 teaspoons baking soda",
+      "2 teaspoons salt",
+      "4 cups chocolate chips",
+      "Flaky sea salt, for finishing"
+    ],
+    instructions: [
+      "Preheat the oven to 350°F.",
+      "Brown the butter, then let it cool slightly so it is still liquid but no longer piping hot.",
+      "Add the brown sugar and white sugar to the browned butter. Stir until just combined.",
+      "Add the egg yolks, whole eggs, and vanilla. Stir until just combined.",
+      "Add the flour, baking soda, and salt. Stir only partway, then add the chocolate chips and finish mixing until the dough just comes together.",
+      "Scoop the dough into balls and place them on a cookie sheet, leaving room for the cookies to spread.",
+      "Bake at 350°F for 11–12 minutes, keeping an eye on the cookies near the end.",
+      "Remove from the oven and let the cookies sit on the cookie sheet for 3 minutes.",
+      "Finish with a sprinkle of flaky sea salt before serving."
+    ],
+    notes: "Avoid overmixing once the flour is added. The cookies will continue to set while resting on the hot cookie sheet."
+  }
 ];
