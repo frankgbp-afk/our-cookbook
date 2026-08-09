@@ -52,5 +52,13 @@
 
   <script src="recipes.js?v=13"></script>
   <script src="app.js?v=9"></script>
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("./sw.js");
+      });
+    }
+  </script>
 </body>
 </html>
