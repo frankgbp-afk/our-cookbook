@@ -83,7 +83,7 @@ function filteredRecipes() {
 function renderRecipes() {
   const list = filteredRecipes();
 
-  resultsTitle.textContent = selectedCategory === "All" ? "All Recipes" : selectedCategory;
+  resultsTitle.textContent = selectedCategory === "All" ? "Featured Recipes" : selectedCategory;
   recipeCount.textContent = `${list.length} ${list.length === 1 ? "recipe" : "recipes"}`;
   emptyState.hidden = list.length !== 0;
 
@@ -95,7 +95,6 @@ function renderRecipes() {
       tabindex="0"
       role="button"
       aria-label="Open ${escapeHTML(recipe.name)}">
-      ${recipe.image ? `<img class="recipe-card-photo" src="${escapeHTML(recipe.image)}" alt="${escapeHTML(recipe.name)}" loading="lazy" />` : ""}
       <div class="recipe-card-accent">
         <p class="recipe-category">${escapeHTML(recipe.category)}</p>
         <h3>${escapeHTML(recipe.name)}</h3>
@@ -126,7 +125,6 @@ function renderRecipes() {
 function recipeMarkup(recipe) {
   return `
     <div class="detail-hero" style="--cat:${categoryColor(recipe.category)}">
-      ${recipe.image ? `<img class="detail-photo" src="${escapeHTML(recipe.image)}" alt="${escapeHTML(recipe.name)}" />` : ""}
       <div class="detail-top">
         <p class="recipe-category">${escapeHTML(recipe.category)}</p>
         <h2>${escapeHTML(recipe.name)}</h2>
