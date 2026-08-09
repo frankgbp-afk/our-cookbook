@@ -31,5 +31,37 @@ const recipes = [
       "Fluff with a fork, then stir in parsley and Italian seasoning. Taste and adjust seasoning."
     ],
     notes: "The seasoning amounts are intentionally flexible so this can be adjusted to taste."
+  },
+  {
+    id: "cast-iron-chicken-breasts",
+    name: "Cast Iron Chicken Breasts",
+    category: "Mains",
+    description: "Juicy seasoned chicken breasts seared in a hot cast iron skillet, then finished with butter in the oven.",
+    prepTime: "5 min",
+    cookTime: "16 min",
+    totalTime: "26 min",
+    servings: "Varies",
+    tags: ["chicken", "main", "cast iron", "easy", "oven"],
+    ingredients: [
+      "Boneless, skinless chicken breasts",
+      "Oil",
+      "Garlic powder",
+      "Onion powder",
+      "Salt",
+      "Black pepper",
+      "Butter"
+    ],
+    instructions: [
+      "Preheat the oven to 400°F.",
+      "Pat the chicken breasts dry with paper towels.",
+      "Lightly coat the chicken with oil, then season both sides with garlic powder, onion powder, salt, and black pepper.",
+      "Place a cast iron skillet over high heat and allow it to get hot.",
+      "Add the chicken breasts to the hot skillet and sear, without moving them, for 4 minutes.",
+      "Flip the chicken breasts and add a chunk of butter to the skillet.",
+      "Transfer the skillet directly to the preheated oven.",
+      "Cook for 11–12 minutes, or until the chicken reaches 165°F in the thickest part.",
+      "Remove from the oven and let the chicken rest for 5 minutes before serving."
+    ],
+    notes: "The 11–12 minute oven time is a guideline. Chicken breast thickness varies, so use an instant-read thermometer and cook to 165°F."
   }
 ];
