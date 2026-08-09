@@ -152,20 +152,24 @@ const recipes = [
     category: "Snacks",
     author: "Frank",
     description: "Classic homemade stovetop popcorn — hot, salty, and ready in minutes.",
-    time: "10 min",
-    servings: 4,
     image: "stovetop-popcorn.webp",
+    prepTime: "2 min",
+    cookTime: "8 min",
+    totalTime: "10 min",
+    servings: "4",
+    tags: ["popcorn", "snack", "stovetop", "easy"],
     ingredients: [
-      { amount: 3, unit: "tablespoons", item: "oil" },
-      { amount: 0.5, unit: "cup", item: "popcorn kernels" },
-      { amount: 0.5, unit: "teaspoon", item: "popcorn salt" }
+      "3 tablespoons oil",
+      "1/2 cup popcorn kernels",
+      "1/2 teaspoon popcorn salt"
     ],
     instructions: [
       "Set a burner to medium-high heat. Add the oil to a large pot and let it warm up.",
       "Add the popcorn kernels and popcorn salt, then cover the pot with a lid.",
       "Once the kernels begin popping, carefully shake the covered pot back and forth over the burner.",
       "Continue shaking occasionally until the popping slows to a stop. Remove the pot from the heat and carefully open the lid away from your face."
-    ]
+    ],
+    notes: "Keep the lid on while the popcorn is popping, and remove the pot from the heat once the popping has mostly stopped."
   }
 
 ];
