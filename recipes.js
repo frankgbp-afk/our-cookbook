@@ -226,6 +226,62 @@ const recipes = [
       "Add a little more beer as needed, up to 1/3 cup, until the dip reaches the consistency you like.",
       "Cover and chill before serving."
     ]
+  },
+  {
+    id: "ann-chicken-alfredo",
+    name: "Chicken Alfredo",
+    category: "Mains",
+    author: "Ann",
+    description: "Creamy homemade Alfredo sauce tossed with pasta and served with chicken.",
+    image: "ann-chicken-alfredo.jpg",
+    prepTime: "10 min",
+    cookTime: "20 min",
+    totalTime: "30 min",
+    servings: "4",
+    tags: ["chicken", "alfredo", "pasta", "parmesan"],
+    ingredients: [
+      "1/2 cup butter",
+      "1 clove garlic, minced",
+      "1 1/2 cups cream (or milk)",
+      "1 cup fresh Parmesan cheese",
+      "4 oz cream cheese, softened and cut into a few pieces (1/2 block)",
+      "1/4 tsp salt (or to taste)",
+      "1/2 tsp white pepper (black pepper works too)",
+      "Cooked chicken, for serving",
+      "Your favorite pasta, cooked"
+    ],
+    instructions: [
+      "Melt butter in a pot over medium heat.",
+      "Add minced garlic and cook for 2 minutes.",
+      "Add cream cheese and whisk together.",
+      "Add cream a little at a time while whisking.",
+      "Heat until bubbling, but do not boil.",
+      "Add Parmesan cheese and mix until the cheese melts.",
+      "Add salt and pepper.",
+      "Toss with your favorite pasta and serve with chicken.",
+      "If the mixture thickens too much, add more cream. If it is not thick enough, add more cream cheese."
+    ]
+  },
+  {
+    id: "kate-chili-cheese-dip",
+    name: "Chili Cheese Dip",
+    category: "Snacks",
+    author: "Kate",
+    description: "An easy two-ingredient chili cheese dip melted together in the slow cooker.",
+    image: "kate-chili-cheese-dip.jpg",
+    prepTime: "5 min",
+    cookTime: "Varies",
+    totalTime: "Varies",
+    servings: "Varies",
+    tags: ["dip", "snack", "chili", "velveeta", "slow cooker"],
+    ingredients: [
+      "2 cans chili",
+      "1 block Velveeta cheese"
+    ],
+    instructions: [
+      "Cut the Velveeta cheese into cubes.",
+      "Add the cubed cheese and both cans of chili to a slow cooker.",
+      "Turn on the slow cooker and heat until the cheese is completely melted and everything is combined."
+    ]
   }
-
 ];
