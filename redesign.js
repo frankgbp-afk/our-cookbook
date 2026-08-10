@@ -129,6 +129,7 @@ renderRecipes = function() {
 
   attachAuthorBadgeHandlers(recipeGrid);
   setBrowseActionsVisible(true);
+  setHomeButtonVisible(!isPristineHome);
   if (viewAllButton) viewAllButton.hidden = !isPristineHome;
 };
 
@@ -143,7 +144,6 @@ openRecipe = function(id, updateHistory = true) {
 showHome = function(updateHistory = true) {
   if (wantToTryView) wantToTryView.hidden = true;
   originalShowHome(updateHistory);
-  setHomeButtonVisible(false);
   setBrowseActionsVisible(true);
 };
 
@@ -167,17 +167,17 @@ function showWantToTry(updateHistory = true) {
   if (updateHistory) history.pushState({ wantToTry: true }, "", "#want-to-try");
 }
 
-if (globalHomeButton) {
-  globalHomeButton.addEventListener("click", () => {
-    selectedAuthor = null;
-    selectedCategory = "All";
-    homeExpanded = false;
-    searchInput.value = "";
-    setupCategories();
-    showHome();
-    renderRecipes();
-  });
+function resetToHome() {
+  selectedAuthor = null;
+  selectedCategory = "All";
+  homeExpanded = false;
+  searchInput.value = "";
+  setupCategories();
+  showHome();
+  renderRecipes();
 }
+
+if (globalHomeButton) globalHomeButton.addEventListener("click", resetToHome);
 
 if (viewAllButton) {
   viewAllButton.addEventListener("click", () => {
@@ -224,8 +224,17 @@ window.addEventListener("popstate", () => {
   }
 });
 
+const initialAuthorHash = location.hash.match(/^#author-(.+)$/);
 if (location.hash === "#want-to-try") {
   showWantToTry(false);
+} else if (initialAuthorHash) {
+  selectedAuthor = decodeURIComponent(initialAuthorHash[1]);
+  selectedCategory = "All";
+  homeExpanded = true;
+  searchInput.value = "";
+  setupCategories();
+  showHome(false);
+  renderRecipes();
 } else {
   renderRecipes();
   attachAuthorBadgeHandlers(document);
