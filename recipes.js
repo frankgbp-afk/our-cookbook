@@ -106,8 +106,7 @@ const recipes = [
       "Ladle into bowls and top with the reserved crispy bacon, additional yogurt or sour cream if desired, cilantro, and chopped green onion."
     ],
     notes: "The timing and serving size were not listed on the original recipe, so the 45-minute total is an estimate. Beer bread is suggested as an optional side for dipping."
-  }
-,
+  },
   {
     id: "brown-butter-chocolate-chip-cookies",
     name: "Brown Butter Chocolate Chip Cookies",
@@ -283,7 +282,7 @@ const recipes = [
       "Add the cubed cheese and both cans of chili to a slow cooker.",
       "Turn on the slow cooker and heat until the cheese is completely melted and everything is combined."
     ]
-  }  ,
+  },
   {
     id: "beth-dill-dip",
     name: "Dill Dip",
@@ -315,7 +314,7 @@ const recipes = [
     id: "moms-frosting",
     name: "Mom’s Frosting",
     category: "Desserts",
-    image: "moms-frosting.webp",
+    image: "moms-frosting.jpg",
     author: "Mom",
     description: "Mom’s simple homemade vanilla frosting.",
     prepTime: "5 min",
