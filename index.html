@@ -6,11 +6,14 @@
   <meta name="theme-color" content="#c95616" />
   <title>Let’s Cook</title>
   <link rel="stylesheet" href="styles.css?v=11" />
+  <link rel="stylesheet" href="redesign.css?v=1" />
   <link rel="manifest" href="app.webmanifest" />
   <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png" />
   <link rel="apple-touch-icon" href="icon-192.png" />
 </head>
 <body>
+  <button id="globalHomeButton" class="global-home-button" type="button" hidden>⌂ Home</button>
+
   <header class="hero">
     <img class="hero-banner" src="lets-cook-header.jpg" alt="Let’s Cook — Wisconsin family recipe collection" />
   </header>
@@ -21,18 +24,23 @@
         <label class="search-box">
           <span class="search-icon">⌕</span>
           <span class="sr-only">Search recipes</span>
-          <input id="searchInput" type="search" placeholder="Search recipes or ingredients…" autocomplete="off" />
+          <input id="searchInput" type="search" placeholder="Search recipes, ingredients, or people…" autocomplete="off" />
         </label>
         <div id="categoryButtons" class="category-row" aria-label="Recipe categories"></div>
       </div>
 
       <div class="section-heading">
-        <h2 id="resultsTitle">Featured Recipes</h2>
+        <h2 id="resultsTitle">Recently Added</h2>
         <span id="recipeCount"></span>
       </div>
 
       <div id="recipeGrid" class="recipe-grid"></div>
       <p id="emptyState" class="empty-state" hidden>No recipes found. Try another search or category.</p>
+
+      <div id="browseActions" class="browse-actions">
+        <button id="viewAllButton" class="browse-action primary" type="button">View All Recipes</button>
+        <button id="wantToTryButton" class="browse-action" type="button">Want to Try</button>
+      </div>
     </section>
 
     <section id="recipeView" class="recipe-view" hidden>
@@ -43,6 +51,13 @@
     <section id="cookingView" class="cooking-view" hidden>
       <div id="cookingContent"></div>
     </section>
+
+    <section id="wantToTryView" class="want-to-try-view" hidden>
+      <div class="want-to-try-card">
+        <h2>Want to Try</h2>
+        <p>This is where recipes we’re considering can live before they earn a spot in the family cookbook.</p>
+      </div>
+    </section>
   </main>
 
   <footer id="siteFooter">
@@ -52,6 +67,7 @@
 
   <script src="recipes.js?v=14"></script>
   <script src="app.js?v=9"></script>
+  <script src="redesign.js?v=1"></script>
 
   <script>
     if ("serviceWorker" in navigator) {
