@@ -283,5 +283,78 @@ const recipes = [
       "Add the cubed cheese and both cans of chili to a slow cooker.",
       "Turn on the slow cooker and heat until the cheese is completely melted and everything is combined."
     ]
+  }  ,
+  {
+    id: "beth-dill-dip",
+    name: "Dill Dip",
+    category: "Snacks",
+    author: "Beth",
+    description: "A cool, creamy dill dip that’s easy to mix together and perfect for vegetables, chips, crackers, or bread.",
+    prepTime: "5 min",
+    cookTime: "0 min",
+    totalTime: "5 min + chill time",
+    servings: "Varies",
+    tags: ["dip", "snack", "dill", "vegetables", "easy"],
+    ingredients: [
+      "1 cup sour cream",
+      "1 cup mayonnaise",
+      "2 tablespoons dried dill weed",
+      "2 tablespoons dried minced onion",
+      "1 tablespoon dried parsley",
+      "1 teaspoon garlic powder",
+      "1/8 teaspoon salt"
+    ],
+    instructions: [
+      "Mix all ingredients together in a medium bowl.",
+      "Cover and chill for at least 30 minutes before serving.",
+      "Serve with fresh vegetables, chips, crackers, or bread."
+    ]
+  },
+  {
+    id: "moms-frosting",
+    name: "Mom’s Frosting",
+    category: "Desserts",
+    author: "Mom",
+    description: "Mom’s simple homemade vanilla frosting.",
+    prepTime: "5 min",
+    cookTime: "0 min",
+    totalTime: "5 min",
+    servings: "Varies",
+    tags: ["frosting", "dessert", "vanilla"],
+    ingredients: [
+      "1/3 cup butter",
+      "1 teaspoon vanilla",
+      "2 cups powdered sugar",
+      "1 tablespoon milk"
+    ],
+    instructions: [
+      "Mix the butter and vanilla together.",
+      "Gradually mix in the powdered sugar and milk until the frosting is smooth and combined."
+    ]
+  },
+  {
+    id: "moms-chocolate-frosting",
+    name: "Mom’s Chocolate Frosting",
+    category: "Desserts",
+    author: "Mom",
+    description: "Mom’s homemade chocolate frosting made with cocoa, butter, and powdered sugar.",
+    prepTime: "5 min",
+    cookTime: "5 min",
+    totalTime: "10 min",
+    servings: "Varies",
+    tags: ["frosting", "dessert", "chocolate", "cocoa"],
+    ingredients: [
+      "1/3 cup butter",
+      "1/4 cup water",
+      "1 teaspoon vanilla",
+      "2 cups powdered sugar",
+      "1/2 cup cocoa powder"
+    ],
+    instructions: [
+      "Melt the butter and water together.",
+      "Stir in the vanilla.",
+      "Mix in the powdered sugar and cocoa powder until smooth and combined."
+    ]
   }
+
 ];

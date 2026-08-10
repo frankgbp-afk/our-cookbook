@@ -18,7 +18,10 @@ const AUTHOR_COLORS = {
   Frank: "#4C7A4D",
   Beth: "#7FB7D6",
   Ann: "#8E6BBE",
-  Kate: "#E0B43D"
+  Kate: "#E0B43D",
+  Mom: "#C46F8A",
+  Alan: "#5F8F8A",
+  Eric: "#B8754A"
 };
 
 const homeView = document.getElementById("homeView");
