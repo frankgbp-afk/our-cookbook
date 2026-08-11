@@ -2,6 +2,7 @@ recipes.push({
   id: "beth-sos-mix",
   name: "SOS Mix",
   category: "Sides",
+  image: "beth-sos-mix.jpg",
   author: "Beth",
   description: "A make-ahead soup-or-sauce mix that can replace a can of cream soup in recipes.",
   prepTime: "5 min",
