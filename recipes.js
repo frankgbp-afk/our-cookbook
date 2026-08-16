@@ -14,349 +14,40 @@ const recipes = [
     totalTime: "25 min",
     servings: "4",
     tags: ["rice", "side", "garlic", "easy"],
-    ingredients: [
-      "1 cup white rice",
-      "2 cups water",
-      "2 tablespoons butter",
-      "Garlic powder, to taste",
-      "Parsley flakes, to taste",
-      "Italian seasoning, to taste",
-      "Salt and pepper, to taste"
-    ],
-    instructions: [
-      "Melt the butter in a saucepan over medium heat.",
-      "Add the dry rice and toast for 2–3 minutes, stirring often, until some grains begin to look lightly golden.",
-      "Carefully add the water and season with garlic powder, salt, and pepper.",
-      "Bring to a boil, then cover and reduce the heat to low.",
-      "Cook until the water is absorbed and the rice is tender, about 15–18 minutes.",
-      "Remove from the heat and let the rice rest, covered, for 5 minutes.",
-      "Fluff with a fork, then stir in parsley and Italian seasoning. Taste and adjust seasoning."
-    ],
+    ingredients: ["1 cup white rice","2 cups water","2 tablespoons butter","Garlic powder, to taste","Parsley flakes, to taste","Italian seasoning, to taste","Salt and pepper, to taste"],
+    instructions: ["Melt the butter in a saucepan over medium heat.","Add the dry rice and toast for 2–3 minutes, stirring often, until some grains begin to look lightly golden.","Carefully add the water and season with garlic powder, salt, and pepper.","Bring to a boil, then cover and reduce the heat to low.","Cook until the water is absorbed and the rice is tender, about 15–18 minutes.","Remove from the heat and let the rice rest, covered, for 5 minutes.","Fluff with a fork, then stir in parsley and Italian seasoning. Taste and adjust seasoning."],
     notes: "The seasoning amounts are intentionally flexible so this can be adjusted to taste."
   },
   {
-    id: "cast-iron-chicken-breasts",
-    name: "Cast Iron Chicken Breasts",
-    category: "Mains",
-    description: "Juicy seasoned chicken breasts seared in a hot cast iron skillet, then finished with butter in the oven.",
-    image: "cast-iron-chicken.jpg",
-    author: "Frank",
-    prepTime: "5 min",
-    cookTime: "16 min",
-    totalTime: "26 min",
-    servings: "Varies",
-    tags: ["chicken", "main", "cast iron", "easy", "oven"],
-    ingredients: [
-      "Boneless, skinless chicken breasts",
-      "Oil",
-      "Garlic powder",
-      "Onion powder",
-      "Salt",
-      "Black pepper",
-      "Butter"
-    ],
-    instructions: [
-      "Preheat the oven to 400°F.",
-      "Pat the chicken breasts dry with paper towels.",
-      "Lightly coat the chicken with oil, then season both sides with garlic powder, onion powder, salt, and black pepper.",
-      "Place a cast iron skillet over high heat and allow it to get hot.",
-      "Add the chicken breasts to the hot skillet and sear, without moving them, for 4 minutes.",
-      "Flip the chicken breasts and add a chunk of butter to the skillet.",
-      "Transfer the skillet directly to the preheated oven.",
-      "Cook for 11–12 minutes, or until the chicken reaches 165°F in the thickest part.",
-      "Remove from the oven and let the chicken rest for 5 minutes before serving."
-    ],
-    notes: "The 11–12 minute oven time is a guideline. Chicken breast thickness varies, so use an instant-read thermometer and cook to 165°F."
+    id: "cast-iron-chicken-breasts", name: "Cast Iron Chicken Breasts", category: "Mains", description: "Juicy seasoned chicken breasts seared in a hot cast iron skillet, then finished with butter in the oven.", image: "cast-iron-chicken.jpg", author: "Frank", prepTime: "5 min", cookTime: "16 min", totalTime: "26 min", servings: "Varies", tags: ["chicken","main","cast iron","easy","oven"], ingredients: ["Boneless, skinless chicken breasts","Oil","Garlic powder","Onion powder","Salt","Black pepper","Butter"], instructions: ["Preheat the oven to 400°F.","Pat the chicken breasts dry with paper towels.","Lightly coat the chicken with oil, then season both sides with garlic powder, onion powder, salt, and black pepper.","Place a cast iron skillet over high heat and allow it to get hot.","Add the chicken breasts to the hot skillet and sear, without moving them, for 4 minutes.","Flip the chicken breasts and add a chunk of butter to the skillet.","Transfer the skillet directly to the preheated oven.","Cook for 11–12 minutes, or until the chicken reaches 165°F in the thickest part.","Remove from the oven and let the chicken rest for 5 minutes before serving."], notes: "The 11–12 minute oven time is a guideline. Chicken breast thickness varies, so use an instant-read thermometer and cook to 165°F."
   },
   {
-    id: "loaded-baked-potato-soup",
-    name: "Loaded Baked Potato Soup",
-    category: "Soups",
-    description: "A rich, creamy potato soup loaded with bacon, cheddar, sour cream, salsa verde, and fresh toppings.",
-    image: "loaded-potato-soup.jpg",
-    author: "Frank",
-    prepTime: "15 min",
-    cookTime: "30 min",
-    totalTime: "45 min",
-    servings: "Varies",
-    tags: ["soup", "potato", "bacon", "cheddar", "comfort food"],
-    ingredients: [
-      "6 slices thick-cut bacon, chopped",
-      "1 yellow onion, chopped",
-      "4 cloves garlic, chopped",
-      "Salt and black pepper, to taste",
-      "2 tablespoons salted butter",
-      "1/4 cup all-purpose flour (or gluten-free flour)",
-      "4 cups low-sodium vegetable broth",
-      "4 Russet potatoes, peeled and chopped",
-      "2 cups milk",
-      "1/3 cup salsa verde",
-      "1/3 cup plain Greek yogurt or sour cream",
-      "1 cup shredded cheddar cheese",
-      "1/2 cup fresh cilantro, chopped",
-      "Chopped green onion, for serving"
-    ],
-    instructions: [
-      "Cook the chopped bacon in a large pot until crisp. Remove the bacon and set it aside, leaving some bacon fat in the pot.",
-      "Add the onion and garlic to the same pot and sauté in the remaining bacon fat. Season lightly with salt and black pepper.",
-      "Add the butter, then stir in the flour. Cook briefly until the flour mixture is lightly browned and forms a roux.",
-      "Pour in the vegetable broth and add the chopped potatoes. Bring to a simmer and cook for about 15 minutes, or until the potatoes are tender.",
-      "Use a potato masher to mash some of the potatoes directly in the pot, leaving plenty of chunks for texture.",
-      "Stir in the milk, salsa verde, Greek yogurt or sour cream, and shredded cheddar. Cook gently until the cheese has melted and the soup is creamy.",
-      "Ladle into bowls and top with the reserved crispy bacon, additional yogurt or sour cream if desired, cilantro, and chopped green onion."
-    ],
-    notes: "The timing and serving size were not listed on the original recipe, so the 45-minute total is an estimate. Beer bread is suggested as an optional side for dipping."
+    id: "loaded-baked-potato-soup", name: "Loaded Baked Potato Soup", category: "Soups", description: "A rich, creamy potato soup loaded with bacon, cheddar, sour cream, salsa verde, and fresh toppings.", image: "loaded-potato-soup.jpg", author: "Frank", prepTime: "15 min", cookTime: "30 min", totalTime: "45 min", servings: "Varies", tags: ["soup","potato","bacon","cheddar","comfort food"], ingredients: ["6 slices thick-cut bacon, chopped","1 yellow onion, chopped","4 cloves garlic, chopped","Salt and black pepper, to taste","2 tablespoons salted butter","1/4 cup all-purpose flour (or gluten-free flour)","4 cups low-sodium vegetable broth","4 Russet potatoes, peeled and chopped","2 cups milk","1/3 cup salsa verde","1/3 cup plain Greek yogurt or sour cream","1 cup shredded cheddar cheese","1/2 cup fresh cilantro, chopped","Chopped green onion, for serving"], instructions: ["Cook the chopped bacon in a large pot until crisp. Remove the bacon and set it aside, leaving some bacon fat in the pot.","Add the onion and garlic to the same pot and sauté in the remaining bacon fat. Season lightly with salt and black pepper.","Add the butter, then stir in the flour. Cook briefly until the flour mixture is lightly browned and forms a roux.","Pour in the vegetable broth and add the chopped potatoes. Bring to a simmer and cook for about 15 minutes, or until the potatoes are tender.","Use a potato masher to mash some of the potatoes directly in the pot, leaving plenty of chunks for texture.","Stir in the milk, salsa verde, Greek yogurt or sour cream, and shredded cheddar. Cook gently until the cheese has melted and the soup is creamy.","Ladle into bowls and top with the reserved crispy bacon, additional yogurt or sour cream if desired, cilantro, and chopped green onion."], notes: "The timing and serving size were not listed on the original recipe, so the 45-minute total is an estimate. Beer bread is suggested as an optional side for dipping."
   },
   {
-    id: "brown-butter-chocolate-chip-cookies",
-    name: "Brown Butter Chocolate Chip Cookies",
-    category: "Desserts",
-    description: "Rich, chewy chocolate chip cookies made with nutty browned butter and finished with flaky sea salt.",
-    image: "brown-butter-chocolate-chip-cookies.jpg",
-    author: "Frank",
-    prepTime: "20 min",
-    cookTime: "11–12 min",
-    totalTime: "35 min",
-    servings: "Varies",
-    tags: ["cookies", "dessert", "chocolate chip", "brown butter", "baking"],
-    ingredients: [
-      "1 1/2 cups browned butter",
-      "2 cups brown sugar",
-      "1/2 cup white sugar",
-      "2 large egg yolks",
-      "2 whole eggs",
-      "2 tablespoons vanilla flavoring",
-      "3 1/2 cups all-purpose flour",
-      "1 1/2 teaspoons baking soda",
-      "2 teaspoons salt",
-      "4 cups chocolate chips",
-      "Flaky sea salt, for finishing"
-    ],
-    instructions: [
-      "Preheat the oven to 350°F.",
-      "Brown the butter, then let it cool slightly so it is still liquid but no longer piping hot.",
-      "Add the brown sugar and white sugar to the browned butter. Stir until just combined.",
-      "Add the egg yolks, whole eggs, and vanilla. Stir until just combined.",
-      "Add the flour, baking soda, and salt. Stir only partway, then add the chocolate chips and finish mixing until the dough just comes together.",
-      "Scoop the dough into balls and place them on a cookie sheet, leaving room for the cookies to spread.",
-      "Bake at 350°F for 11–12 minutes, keeping an eye on the cookies near the end.",
-      "Remove from the oven and let the cookies sit on the cookie sheet for 3 minutes.",
-      "Finish with a sprinkle of flaky sea salt before serving."
-    ],
-    notes: "Avoid overmixing once the flour is added. The cookies will continue to set while resting on the hot cookie sheet."
+    id: "brown-butter-chocolate-chip-cookies", name: "Brown Butter Chocolate Chip Cookies", category: "Desserts", description: "Rich, chewy chocolate chip cookies made with nutty browned butter and finished with flaky sea salt.", image: "brown-butter-chocolate-chip-cookies.jpg", author: "Frank", prepTime: "20 min", cookTime: "11–12 min", totalTime: "35 min", servings: "Varies", tags: ["cookies","dessert","chocolate chip","brown butter","baking"], ingredients: ["1 1/2 cups browned butter","2 cups brown sugar","1/2 cup white sugar","2 large egg yolks","2 whole eggs","2 tablespoons vanilla flavoring","3 1/2 cups all-purpose flour","1 1/2 teaspoons baking soda","2 teaspoons salt","4 cups chocolate chips","Flaky sea salt, for finishing"], instructions: ["Preheat the oven to 350°F.","Brown the butter, then let it cool slightly so it is still liquid but no longer piping hot.","Add the brown sugar and white sugar to the browned butter. Stir until just combined.","Add the egg yolks, whole eggs, and vanilla. Stir until just combined.","Add the flour, baking soda, and salt. Stir only partway, then add the chocolate chips and finish mixing until the dough just comes together.","Scoop the dough into balls and place them on a cookie sheet, leaving room for the cookies to spread.","Bake at 350°F for 11–12 minutes, keeping an eye on the cookies near the end.","Remove from the oven and let the cookies sit on the cookie sheet for 3 minutes.","Finish with a sprinkle of flaky sea salt before serving."], notes: "Avoid overmixing once the flour is added. The cookies will continue to set while resting on the hot cookie sheet."
   },
+  {id:"stovetop-popcorn",name:"Stovetop Popcorn",category:"Snacks",author:"Frank",description:"Classic homemade stovetop popcorn — hot, salty, and ready in minutes.",image:"stovetop-popcorn.webp",prepTime:"2 min",cookTime:"8 min",totalTime:"10 min",servings:"4",tags:["popcorn","snack","stovetop","easy"],ingredients:["3 tablespoons oil","1/2 cup popcorn kernels","1/2 teaspoon popcorn salt"],instructions:["Set a burner to medium-high heat. Add the oil to a large pot and let it warm up.","Add the popcorn kernels and popcorn salt, then cover the pot with a lid.","Once the kernels begin popping, carefully shake the covered pot back and forth over the burner.","Continue shaking occasionally until the popping slows to a stop. Remove the pot from the heat and carefully open the lid away from your face."],notes:"Keep the lid on while the popcorn is popping, and remove the pot from the heat once the popping has mostly stopped."},
+  {id:"smarter-alfredo",name:"Smarter Alfredo",category:"Mains",author:"Beth",description:"A lighter, creamy Alfredo-style fettuccine made with chicken broth, cream cheese, Parmesan, and garlic.",image:"smarter-alfredo.jpg",prepTime:"5 min",cookTime:"15 min",totalTime:"20 min",servings:"4",tags:["alfredo","pasta","fettuccine","easy"],ingredients:["3 3/4 cups low-sodium chicken broth","1/4 cup flour","1 cup cream cheese","9 tablespoons grated Parmesan cheese","1-3 cloves garlic","Salt and pepper to taste","8 ounces fettuccine"],instructions:["Cook the fettuccine according to the package directions.","Meanwhile, whisk the chicken broth and flour together in a medium saucepan until smooth.","Stir in the cream cheese, garlic, 8 tablespoons of the Parmesan cheese, and salt and pepper to taste.","Cook over medium heat, stirring constantly with a whisk, until the sauce comes to a gentle boil and thickens, about 2 minutes.","Drain the pasta and toss it with the Alfredo sauce.","Sprinkle with the remaining 1 tablespoon Parmesan cheese and serve."],notes:"Use 1 to 3 cloves of garlic depending on how garlicky you like your Alfredo."},
+  {id:"beth-beer-dip",name:"Beer Dip",category:"Snacks",author:"Beth",description:"A creamy, cheesy ranch dip with a splash of beer, served chilled.",image:"beth-beer-dip.jpg",prepTime:"5 min",cookTime:"0 min",totalTime:"5 min + chill time",servings:"8",tags:["dip","snack","beer","ranch","cheese"],ingredients:["2 (8 oz) blocks cream cheese","2 cups shredded cheese","1 packet ranch seasoning mix","1/4 to 1/3 cup beer"],instructions:["Add the cream cheese, shredded cheese, ranch seasoning mix, and 1/4 cup beer to a bowl.","Mix until everything is thoroughly combined.","Add a little more beer as needed, up to 1/3 cup, until the dip reaches the consistency you like.","Cover and chill before serving."]},
+  {id:"ann-chicken-alfredo",name:"Chicken Alfredo",category:"Mains",author:"Ann",description:"Creamy homemade Alfredo sauce tossed with pasta and served with chicken.",image:"ann-chicken-alfredo.jpg",prepTime:"10 min",cookTime:"20 min",totalTime:"30 min",servings:"4",tags:["chicken","alfredo","pasta","parmesan"],ingredients:["1/2 cup butter","1 clove garlic, minced","1 1/2 cups cream (or milk)","1 cup fresh Parmesan cheese","4 oz cream cheese, softened and cut into a few pieces (1/2 block)","1/4 tsp salt (or to taste)","1/2 tsp white pepper (black pepper works too)","Cooked chicken, for serving","Your favorite pasta, cooked"],instructions:["Melt butter in a pot over medium heat.","Add minced garlic and cook for 2 minutes.","Add cream cheese and whisk together.","Add cream a little at a time while whisking.","Heat until bubbling, but do not boil.","Add Parmesan cheese and mix until the cheese melts.","Add salt and pepper.","Toss with your favorite pasta and serve with chicken.","If the mixture thickens too much, add more cream. If it is not thick enough, add more cream cheese."]},
+  {id:"kate-chili-cheese-dip",name:"Chili Cheese Dip",category:"Snacks",author:"Kate",description:"An easy two-ingredient chili cheese dip melted together in the slow cooker.",image:"kate-chili-cheese-dip.jpg",prepTime:"5 min",cookTime:"Varies",totalTime:"Varies",servings:"Varies",tags:["dip","snack","chili","velveeta","slow cooker"],ingredients:["2 cans chili","1 block Velveeta cheese"],instructions:["Cut the Velveeta cheese into cubes.","Add the cubed cheese and both cans of chili to a slow cooker.","Turn on the slow cooker and heat until the cheese is completely melted and everything is combined."]},
+  {id:"beth-dill-dip",name:"Dill Dip",category:"Snacks",image:"beth-dill-dip.jpg",author:"Beth",description:"A cool, creamy dill dip that’s easy to mix together and perfect for vegetables, chips, crackers, or bread.",prepTime:"5 min",cookTime:"0 min",totalTime:"5 min + chill time",servings:"Varies",tags:["dip","snack","dill","vegetables","easy"],ingredients:["1 cup sour cream","1 cup mayonnaise","2 tablespoons dried dill weed","2 tablespoons dried minced onion","1 tablespoon dried parsley","1 teaspoon garlic powder","1/8 teaspoon salt"],instructions:["Mix all ingredients together in a medium bowl.","Cover and chill for at least 30 minutes before serving.","Serve with fresh vegetables, chips, crackers, or bread."]},
+  {id:"moms-frosting",name:"Mom’s Frosting",category:"Desserts",image:"moms-frosting.jpg",author:"Mom",description:"Mom’s simple homemade vanilla frosting.",prepTime:"5 min",cookTime:"0 min",totalTime:"5 min",servings:"Varies",tags:["frosting","dessert","vanilla"],ingredients:["1/3 cup butter","1 teaspoon vanilla","2 cups powdered sugar","1 tablespoon milk"],instructions:["Mix the butter and vanilla together.","Gradually mix in the powdered sugar and milk until the frosting is smooth and combined."]},
+  {id:"moms-chocolate-frosting",name:"Mom’s Chocolate Frosting",category:"Desserts",image:"moms-chocolate-frosting.jpg",author:"Mom",description:"Mom’s homemade chocolate frosting made with cocoa, butter, and powdered sugar.",prepTime:"5 min",cookTime:"5 min",totalTime:"10 min",servings:"Varies",tags:["frosting","dessert","chocolate","cocoa"],ingredients:["1/3 cup butter","1/4 cup water","1 teaspoon vanilla","2 cups powdered sugar","1/2 cup cocoa powder"],instructions:["Melt the butter and water together.","Stir in the vanilla.","Mix in the powdered sugar and cocoa powder until smooth and combined."]},
   {
-    id: "stovetop-popcorn",
-    name: "Stovetop Popcorn",
-    category: "Snacks",
-    author: "Frank",
-    description: "Classic homemade stovetop popcorn — hot, salty, and ready in minutes.",
-    image: "stovetop-popcorn.webp",
-    prepTime: "2 min",
-    cookTime: "8 min",
-    totalTime: "10 min",
-    servings: "4",
-    tags: ["popcorn", "snack", "stovetop", "easy"],
-    ingredients: [
-      "3 tablespoons oil",
-      "1/2 cup popcorn kernels",
-      "1/2 teaspoon popcorn salt"
-    ],
-    instructions: [
-      "Set a burner to medium-high heat. Add the oil to a large pot and let it warm up.",
-      "Add the popcorn kernels and popcorn salt, then cover the pot with a lid.",
-      "Once the kernels begin popping, carefully shake the covered pot back and forth over the burner.",
-      "Continue shaking occasionally until the popping slows to a stop. Remove the pot from the heat and carefully open the lid away from your face."
-    ],
-    notes: "Keep the lid on while the popcorn is popping, and remove the pot from the heat once the popping has mostly stopped."
-  },
-  {
-    id: "smarter-alfredo",
-    name: "Smarter Alfredo",
-    category: "Mains",
+    id: "beth-teriyaki-sauce",
+    name: "Teriyaki Sauce",
+    category: "Sides",
+    image: "beth-teriyaki-sauce.jpg",
     author: "Beth",
-    description: "A lighter, creamy Alfredo-style fettuccine made with chicken broth, cream cheese, Parmesan, and garlic.",
-    image: "smarter-alfredo.jpg",
-    prepTime: "5 min",
-    cookTime: "15 min",
-    totalTime: "20 min",
-    servings: "4",
-    tags: ["alfredo", "pasta", "fettuccine", "easy"],
-    ingredients: [
-      "3 3/4 cups low-sodium chicken broth",
-      "1/4 cup flour",
-      "1 cup cream cheese",
-      "9 tablespoons grated Parmesan cheese",
-      "1-3 cloves garlic",
-      "Salt and pepper to taste",
-      "8 ounces fettuccine"
-    ],
-    instructions: [
-      "Cook the fettuccine according to the package directions.",
-      "Meanwhile, whisk the chicken broth and flour together in a medium saucepan until smooth.",
-      "Stir in the cream cheese, garlic, 8 tablespoons of the Parmesan cheese, and salt and pepper to taste.",
-      "Cook over medium heat, stirring constantly with a whisk, until the sauce comes to a gentle boil and thickens, about 2 minutes.",
-      "Drain the pasta and toss it with the Alfredo sauce.",
-      "Sprinkle with the remaining 1 tablespoon Parmesan cheese and serve."
-    ],
-    notes: "Use 1 to 3 cloves of garlic depending on how garlicky you like your Alfredo."
-  },
-  {
-    id: "beth-beer-dip",
-    name: "Beer Dip",
-    category: "Snacks",
-    author: "Beth",
-    description: "A creamy, cheesy ranch dip with a splash of beer, served chilled.",
-    image: "beth-beer-dip.jpg",
-    prepTime: "5 min",
-    cookTime: "0 min",
-    totalTime: "5 min + chill time",
-    servings: "8",
-    tags: ["dip", "snack", "beer", "ranch", "cheese"],
-    ingredients: [
-      "2 (8 oz) blocks cream cheese",
-      "2 cups shredded cheese",
-      "1 packet ranch seasoning mix",
-      "1/4 to 1/3 cup beer"
-    ],
-    instructions: [
-      "Add the cream cheese, shredded cheese, ranch seasoning mix, and 1/4 cup beer to a bowl.",
-      "Mix until everything is thoroughly combined.",
-      "Add a little more beer as needed, up to 1/3 cup, until the dip reaches the consistency you like.",
-      "Cover and chill before serving."
-    ]
-  },
-  {
-    id: "ann-chicken-alfredo",
-    name: "Chicken Alfredo",
-    category: "Mains",
-    author: "Ann",
-    description: "Creamy homemade Alfredo sauce tossed with pasta and served with chicken.",
-    image: "ann-chicken-alfredo.jpg",
-    prepTime: "10 min",
-    cookTime: "20 min",
-    totalTime: "30 min",
-    servings: "4",
-    tags: ["chicken", "alfredo", "pasta", "parmesan"],
-    ingredients: [
-      "1/2 cup butter",
-      "1 clove garlic, minced",
-      "1 1/2 cups cream (or milk)",
-      "1 cup fresh Parmesan cheese",
-      "4 oz cream cheese, softened and cut into a few pieces (1/2 block)",
-      "1/4 tsp salt (or to taste)",
-      "1/2 tsp white pepper (black pepper works too)",
-      "Cooked chicken, for serving",
-      "Your favorite pasta, cooked"
-    ],
-    instructions: [
-      "Melt butter in a pot over medium heat.",
-      "Add minced garlic and cook for 2 minutes.",
-      "Add cream cheese and whisk together.",
-      "Add cream a little at a time while whisking.",
-      "Heat until bubbling, but do not boil.",
-      "Add Parmesan cheese and mix until the cheese melts.",
-      "Add salt and pepper.",
-      "Toss with your favorite pasta and serve with chicken.",
-      "If the mixture thickens too much, add more cream. If it is not thick enough, add more cream cheese."
-    ]
-  },
-  {
-    id: "kate-chili-cheese-dip",
-    name: "Chili Cheese Dip",
-    category: "Snacks",
-    author: "Kate",
-    description: "An easy two-ingredient chili cheese dip melted together in the slow cooker.",
-    image: "kate-chili-cheese-dip.jpg",
-    prepTime: "5 min",
-    cookTime: "Varies",
-    totalTime: "Varies",
-    servings: "Varies",
-    tags: ["dip", "snack", "chili", "velveeta", "slow cooker"],
-    ingredients: [
-      "2 cans chili",
-      "1 block Velveeta cheese"
-    ],
-    instructions: [
-      "Cut the Velveeta cheese into cubes.",
-      "Add the cubed cheese and both cans of chili to a slow cooker.",
-      "Turn on the slow cooker and heat until the cheese is completely melted and everything is combined."
-    ]
-  },
-  {
-    id: "beth-dill-dip",
-    name: "Dill Dip",
-    category: "Snacks",
-    image: "beth-dill-dip.jpg",
-    author: "Beth",
-    description: "A cool, creamy dill dip that’s easy to mix together and perfect for vegetables, chips, crackers, or bread.",
-    prepTime: "5 min",
-    cookTime: "0 min",
-    totalTime: "5 min + chill time",
-    servings: "Varies",
-    tags: ["dip", "snack", "dill", "vegetables", "easy"],
-    ingredients: [
-      "1 cup sour cream",
-      "1 cup mayonnaise",
-      "2 tablespoons dried dill weed",
-      "2 tablespoons dried minced onion",
-      "1 tablespoon dried parsley",
-      "1 teaspoon garlic powder",
-      "1/8 teaspoon salt"
-    ],
-    instructions: [
-      "Mix all ingredients together in a medium bowl.",
-      "Cover and chill for at least 30 minutes before serving.",
-      "Serve with fresh vegetables, chips, crackers, or bread."
-    ]
-  },
-  {
-    id: "moms-frosting",
-    name: "Mom’s Frosting",
-    category: "Desserts",
-    image: "moms-frosting.jpg",
-    author: "Mom",
-    description: "Mom’s simple homemade vanilla frosting.",
+    description: "Beth’s easy homemade teriyaki sauce with soy sauce, garlic, ginger, maple syrup, and your choice of sugar or honey.",
     prepTime: "5 min",
     cookTime: "0 min",
     totalTime: "5 min",
     servings: "Varies",
-    tags: ["frosting", "dessert", "vanilla"],
-    ingredients: [
-      "1/3 cup butter",
-      "1 teaspoon vanilla",
-      "2 cups powdered sugar",
-      "1 tablespoon milk"
-    ],
-    instructions: [
-      "Mix the butter and vanilla together.",
-      "Gradually mix in the powdered sugar and milk until the frosting is smooth and combined."
-    ]
-  },
-  {
-    id: "moms-chocolate-frosting",
-    name: "Mom’s Chocolate Frosting",
-    category: "Desserts",
-    image: "moms-chocolate-frosting.jpg",
-    author: "Mom",
-    description: "Mom’s homemade chocolate frosting made with cocoa, butter, and powdered sugar.",
-    prepTime: "5 min",
-    cookTime: "5 min",
-    totalTime: "10 min",
-    servings: "Varies",
-    tags: ["frosting", "dessert", "chocolate", "cocoa"],
-    ingredients: [
-      "1/3 cup butter",
-      "1/4 cup water",
-      "1 teaspoon vanilla",
-      "2 cups powdered sugar",
-      "1/2 cup cocoa powder"
-    ],
-    instructions: [
-      "Melt the butter and water together.",
-      "Stir in the vanilla.",
-      "Mix in the powdered sugar and cocoa powder until smooth and combined."
-    ]
+    tags: ["teriyaki", "sauce", "soy sauce", "easy"],
+    ingredients: ["2/3 cup soy sauce","4 tablespoons sugar (or honey)","1 clove garlic, minced","1/4 teaspoon grated ginger root","1 tablespoon maple syrup","2 1/4 cups water"],
+    instructions: ["Combine all ingredients. Beth likes to use a mason jar and shake well."]
   }
-
 ];
