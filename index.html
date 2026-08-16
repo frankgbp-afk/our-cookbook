@@ -69,6 +69,9 @@
   <script src="recipes-added.js?v=3"></script>
   <script src="beth-biscuits-and-gravy.js?v=1"></script>
   <script>
+    const biscuitsAndGravyRecipe = recipes.find(recipe => recipe.id === "beth-biscuits-and-gravy");
+    if (biscuitsAndGravyRecipe) biscuitsAndGravyRecipe.category = "Mains";
+
     const teriyakiRecipe = recipes.find(recipe => recipe.id === "beth-teriyaki-sauce");
     if (teriyakiRecipe) teriyakiRecipe.image = "beth-teriyaki-sauce.jpg?v=3";
   </script>
