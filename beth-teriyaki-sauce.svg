@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Dark glossy teriyaki sauce in a white bowl with a spoon">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="45%" r="75%"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#ece9e3"/></radialGradient>
+    <radialGradient id="bowl" cx="48%" cy="30%" r="70%"><stop offset="0" stop-color="#fff"/><stop offset=".72" stop-color="#f5f1eb"/><stop offset="1" stop-color="#d7d1c7"/></radialGradient>
+    <radialGradient id="sauce" cx="42%" cy="30%" r="80%"><stop offset="0" stop-color="#5a1d0f"/><stop offset=".48" stop-color="#351008"/><stop offset="1" stop-color="#170704"/></radialGradient>
+    <linearGradient id="spoon" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f7f7f7"/><stop offset=".3" stop-color="#a9a9a9"/><stop offset=".55" stop-color="#f8f8f8"/><stop offset="1" stop-color="#777"/></linearGradient>
+    <filter id="shadow"><feGaussianBlur stdDeviation="18"/></filter>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <ellipse cx="555" cy="650" rx="405" ry="72" fill="#bbb" opacity=".28" filter="url(#shadow)"/>
+  <ellipse cx="540" cy="500" rx="410" ry="245" fill="url(#bowl)"/>
+  <ellipse cx="540" cy="455" rx="350" ry="177" fill="#e8e2d8"/>
+  <ellipse cx="540" cy="447" rx="326" ry="157" fill="url(#sauce)"/>
+  <ellipse cx="470" cy="397" rx="138" ry="38" fill="#a74420" opacity=".32"/>
+  <path d="M350 447 C430 400 565 393 710 430" fill="none" stroke="#d78a62" stroke-width="18" opacity=".16" stroke-linecap="round"/>
+  <g transform="rotate(-22 790 250)">
+    <rect x="780" y="-40" width="58" height="380" rx="29" fill="url(#spoon)"/>
+    <ellipse cx="809" cy="365" rx="118" ry="150" fill="url(#spoon)"/>
+    <ellipse cx="809" cy="370" rx="92" ry="122" fill="#5a1b0e" opacity=".92"/>
+    <ellipse cx="775" cy="325" rx="34" ry="62" fill="#d9916b" opacity=".3"/>
+  </g>
+  <path d="M754 482 C755 526 758 551 766 584 C774 615 793 623 802 598 C809 578 789 552 784 525 C780 504 781 487 784 470 Z" fill="#7e2c17"/>
+</svg>
