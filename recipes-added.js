@@ -35,7 +35,7 @@ recipes.push({
   id: "beth-slow-cooker-black-beans",
   name: "Slow Cooker Black Beans",
   category: "Sides",
-  image: "beth-slow-cooker-black-beans.jpg",
+  image: "beth-slow-cooker-black-beans.png",
   author: "Beth",
   description: "Easy dried black beans cooked with onion, garlic, and bay leaf in the slow cooker, then portioned for recipes just like canned beans.",
   prepTime: "10 min",
