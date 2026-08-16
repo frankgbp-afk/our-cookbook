@@ -65,9 +65,13 @@
     <p>Made with recipes worth keeping. <span aria-hidden="true">♥</span></p>
   </footer>
 
-  <script src="recipes.js?v=14"></script>
-  <script src="recipes-added.js?v=1"></script>
+  <script src="recipes.js?v=15"></script>
+  <script src="recipes-added.js?v=2"></script>
   <script src="beth-biscuits-and-gravy.js?v=1"></script>
+  <script>
+    const teriyakiRecipe = recipes.find(recipe => recipe.id === "beth-teriyaki-sauce");
+    if (teriyakiRecipe) teriyakiRecipe.image = "beth-teriyaki-sauce.jpg?v=2";
+  </script>
   <script src="app.js?v=9"></script>
   <script src="redesign.js?v=1"></script>
 
