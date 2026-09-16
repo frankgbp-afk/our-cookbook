@@ -51,6 +51,7 @@ recipes.push({
   id: "frank-pizza-dough",
   name: "Pizza Dough",
   category: "Mains",
+  image: "frank-pizza-dough.jpg",
   author: "Frank",
   description: "Frank’s cold-fermented homemade pizza dough for one pizza, with both cup and gram measurements.",
   prepTime: "15 min + cold ferment",
