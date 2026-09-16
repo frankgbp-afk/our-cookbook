@@ -2,6 +2,7 @@ recipes.push({
   id: "beth-biscuits-and-gravy",
   name: "Biscuits and Gravy",
   category: "Mains",
+  image: "beth-biscuits-and-gravy.png",
   author: "Beth",
   description: "Classic sausage gravy with onion, milk, and plenty of black pepper, served over warm biscuits.",
   prepTime: "Varies",
