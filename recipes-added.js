@@ -46,3 +46,19 @@ recipes.push({
   ingredients: ["1 lb black beans, picked over to remove broken or wrinkled beans or small stones","6 cups water","1 onion, halved or diced","2–3 whole garlic cloves","1 bay leaf","1 tablespoon salt (or less, to taste)"],
   instructions: ["Place the beans in a large bowl, cover with water, agitate them a few times to remove any dirt, drain in a colander, and rinse again.","Place the black beans, onion, garlic cloves, and bay leaf in a slow cooker. Add 6 cups water.","Cook on high for about 3–4 hours, testing after 3 hours. To test doneness, spoon out a few beans and blow on them; if the skins peel back, the beans are ready. Taste to make sure. If the water is absorbed, add more so the beans stay completely covered. If cooking on low for 6–8 hours, begin testing at the 6-hour point.","Add the salt and cook, or let sit with the heat off, for another 20–30 minutes so the beans absorb the salt. Remove the bay leaf, garlic cloves, and onion before using, if desired.","Use immediately, or allow to cool before storing beans with some of the cooking liquid. Refrigerate for up to 1 week or freeze for up to 3 months. If freezing, flatten freezer bags for easier defrosting and defrost in warm water.","Portion into 1 1/2 cups per bag or jar. Each 1 1/2-cup portion is equal to one can of beans."]
 });
+
+recipes.push({
+  id: "frank-pizza-dough",
+  name: "Pizza Dough",
+  category: "Mains",
+  author: "Frank",
+  description: "Frank’s cold-fermented homemade pizza dough for one pizza, with both cup and gram measurements.",
+  prepTime: "15 min + cold ferment",
+  cookTime: "10–15 min",
+  totalTime: "Up to 72 hr + baking",
+  servings: "1 pizza",
+  tags: ["pizza", "dough", "cold ferment", "baking"],
+  ingredients: ["2 cups (240 g) all-purpose flour","2/3 cup (about 160 g) water","1/3 teaspoon yeast","3/4 teaspoon salt","3/4 teaspoon sugar","1 1/2 tablespoons olive oil"],
+  instructions: ["Combine the flour, yeast, salt, and sugar in a mixing bowl.","Add the water and olive oil and mix until a shaggy dough forms.","Knead until the dough is smooth and cohesive.","Place the dough in a lightly oiled covered container and refrigerate for a cold ferment, up to about 72 hours.","On pizza day, remove the dough from the refrigerator and let it warm and relax before stretching.","Preheat the oven to 475°F.","Stretch the dough to fit the pizza pan, add sauce, cheese, and toppings, and bake until the crust is browned and the pizza is cooked through, about 10–15 minutes."],
+  notes: "This is the single-pizza version. The gram measurements are included alongside the cup measurements for repeatability."
+});
