@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#c95616" />
   <title>Let’s Cook</title>
   <link rel="stylesheet" href="styles.css?v=11" />
-  <link rel="stylesheet" href="redesign.css?v=1" />
+  <link rel="stylesheet" href="redesign.css?v=2" />
   <link rel="manifest" href="app.webmanifest" />
   <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png" />
   <link rel="apple-touch-icon" href="icon-192.png" />
@@ -65,18 +65,11 @@
     <p>Made with recipes worth keeping. <span aria-hidden="true">♥</span></p>
   </footer>
 
-  <script src="recipes.js?v=15"></script>
+  <script src="recipes.js?v=16"></script>
   <script src="recipes-added.js?v=3"></script>
   <script src="beth-biscuits-and-gravy.js?v=1"></script>
-  <script>
-    const biscuitsAndGravyRecipe = recipes.find(recipe => recipe.id === "beth-biscuits-and-gravy");
-    if (biscuitsAndGravyRecipe) biscuitsAndGravyRecipe.category = "Mains";
-
-    const teriyakiRecipe = recipes.find(recipe => recipe.id === "beth-teriyaki-sauce");
-    if (teriyakiRecipe) teriyakiRecipe.image = "beth-teriyaki-sauce.jpg?v=3";
-  </script>
-  <script src="app.js?v=9"></script>
-  <script src="redesign.js?v=1"></script>
+  <script src="app.js?v=10"></script>
+  <script src="redesign.js?v=2"></script>
 
   <script>
     if ("serviceWorker" in navigator) {
