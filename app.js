@@ -78,78 +78,8 @@ function setupCategories() {
       type="button">${escapeHTML(category)}</button>
   `).join("");
 
-  categoryButtons.querySelectorAll(".category-button").forEach(button => {
-    button.addEventListener("click", () => {
-      selectedCategory = button.dataset.category;
-      setupCategories();
-      renderRecipes();
-    });
-  });
+
 }
-
-function filteredRecipes() {
-  const query = searchInput.value.trim().toLowerCase();
-
-  return recipes.filter(recipe => {
-    const categoryMatch = selectedCategory === "All" || recipe.category === selectedCategory;
-    const haystack = [
-      recipe.name,
-      recipe.category,
-      recipe.description,
-      ...(recipe.tags || []),
-      ...(recipe.ingredients || [])
-    ].join(" ").toLowerCase();
-
-    return categoryMatch && (!query || haystack.includes(query));
-  });
-}
-
-function renderRecipes() {
-  const list = filteredRecipes();
-
-  resultsTitle.textContent = selectedCategory === "All" ? "Featured Recipes" : selectedCategory;
-  recipeCount.textContent = `${list.length} ${list.length === 1 ? "recipe" : "recipes"}`;
-  emptyState.hidden = list.length !== 0;
-
-  recipeGrid.innerHTML = list.map(recipe => `
-    <article
-      class="recipe-card"
-      data-id="${escapeHTML(recipe.id)}"
-      style="--cat:${categoryColor(recipe.category)}"
-      tabindex="0"
-      role="button"
-      aria-label="Open ${escapeHTML(recipe.name)}">
-      <div class="recipe-card-media">
-        ${recipe.image ? `<img class="recipe-card-photo" src="${escapeHTML(recipe.image)}" alt="${escapeHTML(recipe.name)}" loading="lazy" />` : ""}
-      </div>
-      <div class="recipe-card-content">
-        ${authorBadgeMarkup(recipe)}
-        <p class="recipe-category">${escapeHTML(recipe.category)}</p>
-        <h3>${escapeHTML(recipe.name)}</h3>
-        <p class="recipe-description">${escapeHTML(recipe.description || "")}</p>
-        <div class="recipe-card-bottom">
-          <div class="recipe-meta">
-            <span>◷ ${escapeHTML(recipe.totalTime)}</span>
-            <span>🍽 ${escapeHTML(recipe.servings)} servings</span>
-          </div>
-          <span class="view-recipe">View Recipe →</span>
-        </div>
-      </div>
-    </article>
-  `).join("");
-
-  recipeGrid.querySelectorAll(".recipe-card").forEach(card => {
-    const open = () => openRecipe(card.dataset.id);
-    card.addEventListener("click", open);
-    card.addEventListener("keydown", event => {
-      if (event.key === "Enter" || event.key === " ") {
-        event.preventDefault();
-        open();
-      }
-    });
-  });
-}
-
 
 function parseMixedNumber(text) {
   const value = String(text).trim();
@@ -356,7 +286,7 @@ function showHome(updateHistory = true) {
   hero.hidden = false;
   siteFooter.hidden = false;
 
-  if (updateHistory) history.pushState({}, "", location.pathname);
+  if (updateHistory) history.pushState({}, "", location.pathname + location.search);
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
@@ -444,21 +374,6 @@ function renderCookingStep() {
 }
 
 backButton.addEventListener("click", () => showHome());
-searchInput.addEventListener("input", renderRecipes);
 
-window.addEventListener("popstate", () => {
-  const id = location.hash.slice(1);
-  if (id && recipes.some(r => r.id === id)) {
-    openRecipe(id, false);
-  } else {
-    showHome(false);
-  }
-});
-
+// The browse page and URL routing are initialized by redesign.js.
 setupCategories();
-renderRecipes();
-
-const initialId = location.hash.slice(1);
-if (initialId && recipes.some(r => r.id === initialId)) {
-  openRecipe(initialId, false);
-}
