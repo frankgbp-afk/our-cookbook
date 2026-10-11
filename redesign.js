@@ -95,16 +95,14 @@ renderRecipes = function() {
       class="recipe-card"
       data-id="${escapeHTML(recipe.id)}"
       style="--cat:${categoryColor(recipe.category)}"
-      tabindex="0"
-      role="button"
-      aria-label="Open ${escapeHTML(recipe.name)}">
+      aria-label="${escapeHTML(recipe.name)}">
       <div class="recipe-card-media">
         ${recipe.image ? `<img class="recipe-card-photo" src="${escapeHTML(recipe.image)}" alt="${escapeHTML(recipe.name)}" loading="lazy" />` : `<div class="recipe-card-placeholder" aria-hidden="true">🍴</div>`}
       </div>
       <div class="recipe-card-content">
         ${authorBadgeMarkup(recipe)}
         <p class="recipe-category">${escapeHTML(recipe.category)}</p>
-        <h3>${escapeHTML(recipe.name)}</h3>
+        <h3><button class="recipe-title-button" type="button" aria-label="Open ${escapeHTML(recipe.name)}">${escapeHTML(recipe.name)}</button></h3>
         <p class="recipe-description">${escapeHTML(recipe.description || "")}</p>
         <div class="recipe-card-bottom">
           <div class="recipe-meta">
@@ -115,17 +113,6 @@ renderRecipes = function() {
       </div>
     </article>
   `).join("");
-
-  recipeGrid.querySelectorAll(".recipe-card").forEach(card => {
-    const open = () => openRecipe(card.dataset.id);
-    card.addEventListener("click", open);
-    card.addEventListener("keydown", event => {
-      if (event.key === "Enter" || event.key === " ") {
-        event.preventDefault();
-        open();
-      }
-    });
-  });
 
   attachAuthorBadgeHandlers(recipeGrid);
   setBrowseActionsVisible(true);
@@ -144,7 +131,7 @@ openRecipe = function(id, updateHistory = true) {
 showHome = function(updateHistory = true) {
   if (wantToTryView) wantToTryView.hidden = true;
   originalShowHome(updateHistory);
-  setBrowseActionsVisible(true);
+  renderRecipes();
 };
 
 startCooking = function(id) {
@@ -174,7 +161,6 @@ function resetToHome() {
   searchInput.value = "";
   setupCategories();
   showHome();
-  renderRecipes();
 }
 
 if (globalHomeButton) globalHomeButton.addEventListener("click", resetToHome);
@@ -201,42 +187,35 @@ searchInput.addEventListener("input", () => {
 categoryButtons.addEventListener("click", event => {
   const button = event.target.closest(".category-button");
   if (!button) return;
+  selectedCategory = button.dataset.category;
   selectedAuthor = null;
-  homeExpanded = button.dataset.category !== "All";
-  setTimeout(renderRecipes, 0);
+  homeExpanded = selectedCategory !== "All";
+  setupCategories();
+  renderRecipes();
 });
 
-window.addEventListener("popstate", () => {
-  if (location.hash === "#want-to-try") {
-    showWantToTry(false);
-    return;
-  }
+recipeGrid.addEventListener("click", event => {
+  const card = event.target.closest(".recipe-card");
+  if (!card || event.target.closest(".author-badge")) return;
+  openRecipe(card.dataset.id);
+});
 
-  const authorHash = location.hash.match(/^#author-(.+)$/);
-  if (authorHash) {
-    selectedAuthor = decodeURIComponent(authorHash[1]);
+function restoreUrlRoute() {
+  if (location.hash === "#want-to-try") return showWantToTry(false);
+  const match = location.hash.match(/^#author-(.+)$/);
+  if (match) {
+    try { selectedAuthor = decodeURIComponent(match[1]); }
+    catch { selectedAuthor = null; }
     selectedCategory = "All";
-    homeExpanded = true;
+    homeExpanded = !!selectedAuthor;
     searchInput.value = "";
     setupCategories();
-    showHome(false);
-    renderRecipes();
+    return showHome(false);
   }
-});
-
-const initialAuthorHash = location.hash.match(/^#author-(.+)$/);
-if (location.hash === "#want-to-try") {
-  showWantToTry(false);
-} else if (initialAuthorHash) {
-  selectedAuthor = decodeURIComponent(initialAuthorHash[1]);
-  selectedCategory = "All";
-  homeExpanded = true;
-  searchInput.value = "";
-  setupCategories();
+  let id = "";
+  try { id = decodeURIComponent(location.hash.slice(1)); } catch {}
+  if (id && recipes.some(r => r.id === id)) return openRecipe(id, false);
   showHome(false);
-  renderRecipes();
-} else {
-  renderRecipes();
-  attachAuthorBadgeHandlers(document);
-  setHomeButtonVisible(!homeView || homeView.hidden);
 }
+window.addEventListener("popstate", restoreUrlRoute);
+restoreUrlRoute();
