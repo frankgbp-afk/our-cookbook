@@ -215,3 +215,26 @@
     font-size: 1.35rem !important;
   }
 }
+
+/* Recipe title is a keyboard-focusable button, separate from the author filter. */
+.recipe-card .recipe-title-button {
+  display: inline;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  line-height: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.recipe-card .recipe-title-button:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* Keep hidden views hidden even when a view has an authored display style. */
+[hidden] {
+  display: none !important;
+}
