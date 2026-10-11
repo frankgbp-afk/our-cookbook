@@ -38,7 +38,7 @@ function attachAuthorBadgeHandlers(root = document) {
   });
 }
 
-authorBadgeMarkup = function(recipe) {
+function authorBadgeMarkup(recipe) {
   if (!recipe.author) return "";
   return `
     <button class="author-badge" data-author="${escapeHTML(recipe.author)}" style="--author:${authorColor(recipe.author)}" type="button" aria-label="Show recipes from ${escapeHTML(recipe.author)}">
@@ -46,9 +46,9 @@ authorBadgeMarkup = function(recipe) {
       <span>${escapeHTML(recipe.author)}</span>
     </button>
   `;
-};
+}
 
-filteredRecipes = function() {
+function filteredRecipes() {
   const query = searchInput.value.trim().toLowerCase();
 
   return recipes.filter(recipe => {
@@ -65,9 +65,9 @@ filteredRecipes = function() {
 
     return categoryMatch && authorMatch && (!query || haystack.includes(query));
   });
-};
+}
 
-renderRecipes = function() {
+function renderRecipes() {
   const allMatches = filteredRecipes();
   const query = searchInput.value.trim();
   const isPristineHome = !homeExpanded && selectedCategory === "All" && !selectedAuthor && !query;
@@ -118,7 +118,7 @@ renderRecipes = function() {
   setBrowseActionsVisible(true);
   setHomeButtonVisible(!isPristineHome);
   if (viewAllButton) viewAllButton.hidden = !isPristineHome;
-};
+}
 
 openRecipe = function(id, updateHistory = true) {
   if (wantToTryView) wantToTryView.hidden = true;
