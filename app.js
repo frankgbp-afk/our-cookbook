@@ -96,35 +96,48 @@ function parseMixedNumber(text) {
   return null;
 }
 
+// Keep useful kitchen fractions (including thirds and sixths) when scaling.
 function prettyQuantity(value) {
-  const rounded = Math.round(value * 16) / 16;
-  const whole = Math.floor(rounded + 1e-9);
-  const fraction = rounded - whole;
-  const common = [
-    [0, ""], [1/16, "1/16"], [1/8, "1/8"], [3/16, "3/16"],
-    [1/4, "1/4"], [5/16, "5/16"], [3/8, "3/8"], [7/16, "7/16"],
-    [1/2, "1/2"], [9/16, "9/16"], [5/8, "5/8"], [11/16, "11/16"],
-    [3/4, "3/4"], [13/16, "13/16"], [7/8, "7/8"], [15/16, "15/16"]
-  ];
-  let best = common[0];
-  for (const pair of common) {
-    if (Math.abs(fraction - pair[0]) < Math.abs(fraction - best[0])) best = pair;
+  const whole = Math.floor(value + 1e-9);
+  const fraction = value - whole;
+  let best = { n: 0, d: 1, error: Infinity };
+  for (const d of [1, 2, 3, 4, 6, 8, 12, 16, 24, 32]) {
+    const n = Math.round(fraction * d);
+    const error = Math.abs(fraction - n / d);
+    if (error < best.error - 1e-10) best = { n, d, error };
   }
-  if (best[0] === 0) return String(whole);
-  if (whole === 0) return best[1];
-  return `${whole} ${best[1]}`;
+  const integer = whole + Math.floor(best.n / best.d);
+  const numerator = best.n % best.d;
+  if (!numerator) return String(integer);
+  const gcd = (a, b) => b ? gcd(b, a % b) : a;
+  const divisor = gcd(numerator, best.d);
+  const text = (numerator / divisor) + "/" + (best.d / divisor);
+  return integer ? integer + " " + text : text;
 }
 
 function scaleIngredient(ingredient, factor) {
-  if (!factor || factor === 1) return ingredient;
+  if (!Number.isFinite(factor) || factor <= 0 || factor === 1) return ingredient;
 
-  const match = ingredient.match(/^(\d+\s+\d+\/\d+|\d+\/\d+|\d+(?:\.\d+)?)(.*)$/);
+  // Scale both sides of ranges such as 1/2–1 pound, 1-3 cloves and 1/4 to 1/3 cup.
+  const number = "(?:\\d+\\s+\\d+\\/\\d+|\\d+\\/\\d+|\\d+(?:\\.\\d+)?)";
+  const match = ingredient.match(new RegExp(
+    "^(\\s*)(" + number + ")(\\s*(?:–|—|-|to)\\s*(" + number + "))?(?=\\s|[A-Za-z(]|$)", "i"
+  ));
   if (!match) return ingredient;
 
-  const amount = parseMixedNumber(match[1]);
-  if (amount === null) return ingredient;
+  const first = parseMixedNumber(match[2]);
+  const second = match[4] ? parseMixedNumber(match[4]) : null;
+  if (first === null || (match[4] && second === null)) return ingredient;
+  const prefix = match[1] + prettyQuantity(first * factor);
+  const range = match[3] ? match[3].replace(match[4], prettyQuantity(second * factor)) : "";
+  let remainder = ingredient.slice(match[0].length);
 
-  return `${prettyQuantity(amount * factor)}${match[2]}`;
+  // Update metric equivalents, but not fixed package sizes such as (8 oz) blocks.
+  remainder = remainder.replace(
+    /^(\s+(?:cups?|tbsps?|tablespoons?|tsps?|teaspoons?|lbs?|pounds?|ounces?|oz|grams?|g|ml|liters?|l)\s+\((?:about\s+)?)(\d+(?:\.\d+)?)(\s*(?:g|grams?|ml)\))/i,
+    (_, before, amount, after) => before + Math.round(Number(amount) * factor) + after
+  );
+  return prefix + range + remainder;
 }
 
 function servingInfo(recipe) {
