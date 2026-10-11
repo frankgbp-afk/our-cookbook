@@ -52,16 +52,6 @@ function authorColor(author) {
   return AUTHOR_COLORS[author] || "#8f7867";
 }
 
-function authorBadgeMarkup(recipe) {
-  if (!recipe.author) return "";
-  return `
-    <span class="author-badge" style="--author:${authorColor(recipe.author)}">
-      <span class="author-icon" aria-hidden="true">🍴</span>
-      <span>${escapeHTML(recipe.author)}</span>
-    </span>
-  `;
-}
-
 function categoryColor(category) {
   return CATEGORY_COLORS[category] || "#8f7867";
 }
